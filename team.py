@@ -1,6 +1,8 @@
 ## team.py #####################################################################
 ## generic nhl94 team & franchise classes ######################################
 ################################################################################
+from player import *
+
 
 #Teams:
 #	City
@@ -44,6 +46,8 @@ def Goaltending:
 		self.startingGoaltender = starter
 		self.backupGoaltender = backup
 		self.thirdGoaltender = third_string
+		## 3d goaltender can be a optional argument to the function whenever
+		## I figure out what python null is
 		
 		self.currentGoaltender = self.startingGoaltender
 		## and we hope it stays that way...
