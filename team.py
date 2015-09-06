@@ -2,7 +2,7 @@
 ## generic nhl94 team & franchise classes ######################################
 ################################################################################
 from player import *
-
+from name_generator import *
 
 #Teams:
 #	City
@@ -65,6 +65,7 @@ class Team:
 		for priority in team_priorities:
 			self.teamPriorities.insert(0, priority)
 		self.Lines = []
+		self.Players = []
 		## and insert some lines into the array, or maybe we do it with fixed list
 		## of lines instead. we'll see
 	

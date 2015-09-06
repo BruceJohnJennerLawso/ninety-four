@@ -3,7 +3,6 @@
 ## bin files ###################################################################
 ################################################################################
 
-
 #Skaters:
 #	Jersey Number
 #	Overall rating
@@ -147,19 +146,15 @@ class Skater(Player):
 
 class Goaltender(Player):
 	def __init__(self, first_name, last_name, jersey_number, overall_rating=-1, \
-				agility, speed, offense, defense, puck_control, glove_hand, \ 
-				glove_side_right, stick_right, stick_left, glove_right, glove_left):
+				agility, speed, offense, defense, puck_control,	is_right_handed, \
+				 stick_right, stick_left, glove_right, glove_left):
 		super(Goaltender, self).__init__(first_name, last_name, jersey_number)
 		self.Agility = agility
 		self.Speed = speed
 		self.Offense = offense
 		self.Defense = defense
 		self.puckControl = puck_control
-
-		self.gloveHand = glove_hand
-		self.gloveSideRight = glove_side_right
-		## need to clarify how this works, I think the glove hand variable was
-		## actually a 1 or 0 depending on left or right catching
+		self.isRightHanded = is_right_handed
 		self.stickRight = stick_right
 		self.stickLeft = stick_left
 		self.gloveRight = glove_right
