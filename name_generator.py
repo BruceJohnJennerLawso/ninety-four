@@ -5,6 +5,7 @@
 ################################################################################
 import random
 
+
 class playerName:
 	def __init__(self, first, last):
 		self.First = first
@@ -32,7 +33,7 @@ class nameList:
 			name_text = input_file.readline()
 			if(name_text != ''):
 				self.Names.insert(0, name_text)
-			print "lastTell %d, name_text %s" % (lastTell, name_text)
+			##print "lastTell %d, name_text %s" % (lastTell, name_text)
 		input_file.close()
 		## load all of the names from the names_file text file passed as an
 		## argument and place them in the list of names

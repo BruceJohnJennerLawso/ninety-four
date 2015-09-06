@@ -2,7 +2,6 @@
 ## generic nhl94 team & franchise classes ######################################
 ################################################################################
 from player import *
-from name_generator import *
 
 #Teams:
 #	City
@@ -41,7 +40,7 @@ class Line:
 		return self.lineType
 
 
-def Goaltending:
+class Goaltending:
 	def __init__(self, starter, backup, third_string):
 		self.startingGoaltender = starter
 		self.backupGoaltender = backup

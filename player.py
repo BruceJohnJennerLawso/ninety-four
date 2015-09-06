@@ -2,6 +2,24 @@
 ## generic player class based off of nhl 94 stats to interface with nhl 94  ####
 ## bin files ###################################################################
 ################################################################################
+from name_generator import *
+
+def generateRandomJerseyNumber(bad_numbers, depth=0):
+	""" Generate some random jersey number between 0 and 99 with the exception
+	of any numbers in a list called bad_numbers, so we can avoid skaters with
+	number 1 or 31 or whatever""" 
+	new_number = -1
+	while(True):
+		new_number = int(random.random()*99)+1
+		for number in bad_numbers:
+			if(new_number == number):
+				##print "%d is a bad number" % new_number
+				return generateRandomJerseyNumber(bad_numbers, depth+1)
+				## this is horrifying
+				## what is wrong with me
+		##if(depth > 5):
+		##	print (">"*depth), new_number
+		return new_number
 
 #Skaters:
 #	Jersey Number
@@ -47,10 +65,10 @@ class Player:
 		return self.jerseyNumber
 
 class Skater(Player):
-	def __init__(self, first_name, last_name, jersey_number, overall_rating=-1, \
-				agility, speed, offense, defense, shot_power, checking, \ 
-				right_handed, fighting, stick_handling, shot_accuracy, endurance, \
-				roughness, pass_accuracy, aggression):
+	def __init__(self, first_name, last_name, jersey_number,\
+				agility, speed, offense, defense, shot_power, checking,\
+				right_handed, fighting, stick_handling, shot_accuracy, endurance,\
+				roughness, pass_accuracy, aggression, position, overall_rating=-1):
 		super(Skater, self).__init__(first_name, last_name, jersey_number)
 		self.Agility = agility
 		self.Speed = speed
@@ -67,7 +85,7 @@ class Skater(Player):
 		self.Roughness = roughness
 		self.passAccuracy = pass_accuracy
 		self.Aggression = aggression
-		
+		self.Position = position
 		if(overall_rating == -1):
 			## we didnt get a rating, so we are going to calculate a new one
 			## based on the rest of the stats
@@ -79,7 +97,7 @@ class Skater(Player):
 			
 	def generateOverallRating(self):
 		Rating = (((7/6)*self.Agility)+((7/6)*self.Speed)+((7/6)*self.Offense) )
-		Rating += ( ((7/6)*self.Defense)+((7/6)*self.Checking)+((7/6)*self.stickHandling)) )
+		Rating += ( ((7/6)*self.Defense)+((7/6)*self.Checking)+((7/6)*self.stickHandling) ) 
 		Rating += ( ((7/6)*self.shotAccuracy)+((7/6)*self.Endurance)+((2/6)*self.Roughness) )		
 		Rating += ( ((3/6)*self.Aggression)+((7/6)*self.Agility)+((7/6)*self.passAccuracy) )
 		return Rating
@@ -129,6 +147,64 @@ class Skater(Player):
 	def getOveralRating(self):
 		return self.overallRating
 
+	def getPosition(self):
+		return self.Position
+		# convention here is based off of the functions defined below
+		
+def caseInsensitiveMatch(str1, str2):
+	if(str1.lower() == str2.lower()):
+		return True;
+	else:
+		return False;		
+		
+def isLeftWing(i):
+	if(caseInsensitiveMatch(i, "lw")):
+		return True
+	else:
+		return False
+
+def isRightWing(i):
+	if(caseInsensitiveMatch(i, "rw")):
+		return True
+	else:
+		return False		
+
+def isCenter(i):
+	if(caseInsensitiveMatch(i, "c")):
+		return True
+	else:
+		return False			
+	
+def isRightDefense(i):
+	if(caseInsensitiveMatch(i, "rd")):
+		return True
+	else:
+		return False			
+		
+def isLeftDefense(i):
+	if(caseInsensitiveMatch(i, "ld")):
+		return True
+	else:
+		return False							
+
+def randomValue(floor, ceiling):
+	value = floor + (random.random()*(ceiling - floor))
+	return value
+	
+def randomIntegerValue(floor, ceiling):
+	return int(randomValue(floor, ceiling+1))	
+
+def randomBoolean():
+	value = int(random.random()*2)
+	if(val == 1):
+		return True
+	else:
+		return False
+
+#def createScoringWinger(first_name, last_name):
+#	newPlayer = Skater(first_name, last_name, generateRandomJerseyNumber([1, 31, 32, 33, 34, 35,36,37,38,39]),  ()
+	
+
 #Goaltenders:
 #	Jersey Number
 #	Overall rating
@@ -145,9 +221,9 @@ class Skater(Player):
 #	Glove Left (Roy 3, commonly same both sides)
 
 class Goaltender(Player):
-	def __init__(self, first_name, last_name, jersey_number, overall_rating=-1, \
+	def __init__(self, first_name, last_name, jersey_number, \
 				agility, speed, offense, defense, puck_control,	is_right_handed, \
-				 stick_right, stick_left, glove_right, glove_left):
+				 stick_right, stick_left, glove_right, glove_left, overall_rating=-1):
 		super(Goaltender, self).__init__(first_name, last_name, jersey_number)
 		self.Agility = agility
 		self.Speed = speed
@@ -171,7 +247,7 @@ class Goaltender(Player):
 
 	def generateOverallRating(self):
 		Rating = (((12/6)*self.Agility)+((12/6)*self.Speed)+((10/6)*self.Offense) )
-		Rating += ( ((10/6)*self.Defense)+((12/6)*self.puckControl)+((11/6)*self.stickRight)) )
+		Rating += ( ((10/6)*self.Defense)+((12/6)*self.puckControl)+((11/6)*self.stickRight) ) 
 		Rating += ( ((11/6)*self.stickLeft)+((12/6)*self.gloveLeft)+((12/6)*self.gloveRight) )		
 		return Rating
 		
@@ -207,3 +283,11 @@ class Goaltender(Player):
 		
 	def getOveralRating(self):
 		return self.overallRating
+		
+if(__name__=="__main__"):
+	for i in range(0, 200):
+		print generateRandomJerseyNumber([1, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39]),
+		## some people have this stupid thing about 'goalie numbers' and 
+		## 'skater numbers'
+	for i in range(0, 200):
+		print randomIntegerValue(1,6)
