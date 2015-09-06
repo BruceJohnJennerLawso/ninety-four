@@ -5,7 +5,7 @@
 ################################################################################
 import random
 
-def playerName:
+class playerName:
 	def __init__(self, first, last):
 		self.First = first
 		self.Last = last
@@ -25,7 +25,15 @@ class nameList:
 		self.Names.insert(0, "Bob")
 		self.Names.insert(0, "Bill")
 		#
-		
+		input_file = open(names_file)
+		lastTell = -1
+		while(lastTell != input_file.tell()):
+			lastTell = input_file.tell()
+			name_text = input_file.readline()
+			if(name_text != ''):
+				self.Names.insert(0, name_text)
+			print "lastTell %d, name_text %s" % (lastTell, name_text)
+		input_file.close()
 		## load all of the names from the names_file text file passed as an
 		## argument and place them in the list of names
 	
@@ -76,8 +84,11 @@ class nameDatabase:
 
 
 
-
-
+if(__name__ == "__main__"):
+	canuckistanNames = nameList("names.txt")
+	for i in range(0, 20):
+		print canuckistanNames.randomName()
+	print canuckistanNames.Names
 
 
 
