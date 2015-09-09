@@ -82,6 +82,10 @@ class Team:
 		
 		
 if(__name__ == "__main__"):
-	goalie = createGoaltender("Billy", "Bob")
-	goalie.Description()
+	canuckistanFirstNames = nameList("cdnFirst.txt")
+	canuckistanLastNames = nameList("cdnLast.txt")	
+	
+	for i in range(0,30):
+		newPlayer = createRandomPlayer(canuckistanFirstNames.randomName(), canuckistanLastNames.randomName())
+		newPlayer.Description()
 		

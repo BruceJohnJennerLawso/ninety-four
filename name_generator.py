@@ -22,9 +22,6 @@ class playerName:
 class nameList:
 	def __init__(self, names_file):
 		self.Names = []
-		self.Names.insert(0, "Jebediah")
-		self.Names.insert(0, "Bob")
-		self.Names.insert(0, "Bill")
 		#
 		input_file = open(names_file)
 		lastTell = -1
@@ -32,7 +29,7 @@ class nameList:
 			lastTell = input_file.tell()
 			name_text = input_file.readline()
 			if(name_text != ''):
-				self.Names.insert(0, name_text)
+				self.Names.insert(0, name_text.rstrip())
 			##print "lastTell %d, name_text %s" % (lastTell, name_text)
 		input_file.close()
 		## load all of the names from the names_file text file passed as an

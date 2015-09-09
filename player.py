@@ -97,6 +97,30 @@ class Skater(Player):
 			self.overallRating = overall_rating
 			## otherwise we manually set the player rating to whatever we were
 			## passed in the constructor
+
+	def Description(self):
+		if(self.isRightHanded == True):
+			handed = "Right"
+		else:
+			handed = "Left "
+		
+		print "___________________________________________________________________\n"
+		
+		print "%s %s" % (self.firstName, self.lastName)
+		print "%s              | Shoots %s     " % \
+		(self.Position.upper(), handed);
+		
+		print "Agility %d      | Speed %d         | Offense %d        | Defense %d" % \
+		(self.Agility, self.Speed, self.Offense, self.Defense);
+
+		print "Shot Power %d   | Shot Accuracy %d | Stick Handling %d | Endurance %d" % \
+		(self.shotPower, self.shotAccuracy, self.stickHandling, self.Endurance);
+
+		print "Checking %d     | Pass Accuracy %d | Roughness %d      | Aggression %d" % \
+		(self.Checking, self.passAccuracy, self.Roughness, self.Aggression);
+		
+		print "___________________________________________________________________\n"	
+
 			
 	def generateOverallRating(self):
 		Rating = (((7/6)*self.Agility)+((7/6)*self.Speed)+((7/6)*self.Offense) )
