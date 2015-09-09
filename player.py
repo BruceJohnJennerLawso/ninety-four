@@ -201,9 +201,64 @@ def randomBoolean():
 	else:
 		return False
 
-#def createScoringWinger(first_name, last_name):
-#	newPlayer = Skater(first_name, last_name, generateRandomJerseyNumber([1, 31, 32, 33, 34, 35,36,37,38,39]),  ()
+def createScoringWinger(first_name, last_name):
+	if(randomBoolean() == True):
+		position = "lw"
+	else:
+		position = "rw"
+	newPlayer = Skater(first_name, last_name, \ 
+			generateRandomJerseyNumber([1, 31, 32, 33, 34, 35,36,37,38,39]), \
+						randomIntegerValue(3,5), randomIntegerValue(3,4),\
+						randomIntegerValue(3,5), randomIntegerValue(2,4),\
+						randomIntegerValue(3,6), randomIntegerValue(2,4),\
+						randomBoolean(), randomIntegerValue(1,4),\
+						randomIntegerValue(2,5), randomIntegerValue(3,6),\
+						randomIntegerValue(2,4), randomIntegerValue(2,4),\
+						randomIntegerValue(3,4), randomIntegerValue(2,4),\
+						position )
 	
+#Skaters:
+#	Jersey Number
+#	Overall rating
+#	Weight value (not understood, 0-9 ABC upwards is higher weights?)
+#	Agility 1,2,3,4,5,6 (Gretzky 6)
+#	Speed 1,2,3,4,5,6 (Bure 6)
+#	Offense Awareness (Gretzky 5)
+#	Defense Awareness (Bourque 6)
+#	Shot Power (Bourque 5)
+#	Checking (Bourque 6)
+#	Handed/Fighting (Dont understand, maybe dual handedness and fighting ability?)
+#	Stick Handling (Gretzky 6)
+#	Shot Accuracy (Gretzky 2? similar scale to others)
+#	Endurance (Gretzky 6)
+#	Roughness (Gretzky 0)
+#	Pass Accuracy (Gretzky 0)
+#	Aggression (Stevens 3, Probert, Kypreos 5)	
+#	def __init__(self, first_name, last_name, jersey_number,\
+#				agility, speed, offense, defense, shot_power, checking,\
+#				right_handed, fighting, stick_handling, shot_accuracy, endurance,\
+#				roughness, pass_accuracy, aggression, position, overall_rating=-1):
+#		super(Skater, self).__init__(first_name, last_name, jersey_number)
+	
+	
+def createCheckingWinger(first_name, last_name):
+	if(randomBoolean() == True):
+		position = "lw"
+	else:
+		position = "rw"
+	## this should probably be skewed a bit at some point since the actual
+	## distribution of wingers is weighted away from wingers playing their off
+	## wings
+	newPlayer = Skater(first_name, last_name, \ 
+			generateRandomJerseyNumber([1, 31, 32, 33, 34, 35,36,37,38,39]), \
+			randomIntegerValue(1,4), randomIntegerValue(3,4),\ ## agility, speed
+			randomIntegerValue(3,5), randomIntegerValue(2,4),\ ## offense, defense
+			randomIntegerValue(3,6), randomIntegerValue(2,4),\ ## shot_power, checking
+			randomBoolean(), randomIntegerValue(1,4),\		   ## right handed, fighting
+			randomIntegerValue(2,5), randomIntegerValue(3,6),\ ## stick handling, shot accuracy
+			randomIntegerValue(2,4), randomIntegerValue(2,4),\ ## endurance, roughness
+			randomIntegerValue(3,4), randomIntegerValue(2,4),\ ## pass accuracy, aggression
+			position )	
 
 #Goaltenders:
 #	Jersey Number
