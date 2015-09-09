@@ -82,5 +82,6 @@ class Team:
 		
 		
 if(__name__ == "__main__"):
-	
+	goalie = createGoaltender("Billy", "Bob")
+	goalie.Description()
 		

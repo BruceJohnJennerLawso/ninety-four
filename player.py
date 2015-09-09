@@ -40,7 +40,7 @@ def generateRandomJerseyNumber(bad_numbers, depth=0):
 #	Aggression (Stevens 3, Probert, Kypreos 5)
 
 
-class Player:
+class Player(object):
 	def __init__(self, first_name, last_name, jersey_number):
 		self.firstName = first_name
 		self.lastName = last_name
@@ -196,7 +196,7 @@ def randomIntegerValue(floor, ceiling):
 
 def randomBoolean():
 	value = int(random.random()*2)
-	if(val == 1):
+	if(value == 1):
 		return True
 	else:
 		return False
@@ -242,6 +242,24 @@ class Goaltender(Player):
 			self.overallRating = overall_rating
 			## otherwise we manually set the player rating to whatever we were
 			## passed in the constructor
+
+	def Description(self):
+		if(self.isRightHanded == True):
+			handed = "Right"
+		else:
+			handed = "Left "
+		
+		print "___________________________________________________________________\n"
+		
+		print "Puck Control %d | Glove Hand %s| Name: %s %s " % \
+		(self.puckControl, handed, self.firstName, self.lastName);
+		
+		print "Agility %d      | Speed %d         | Offense %d     | Defense %d" % \
+		(self.Agility, self.Speed, self.Offense, self.Defense);
+
+		print "Stick Left %d   | Glove Left %d    | Glove Right %d | Stick Right %d" % \
+		(self.stickLeft, self.gloveLeft, self.gloveRight, self.stickRight);
+		print "___________________________________________________________________"		
 
 	def generateOverallRating(self):
 		Rating = (((12/6)*self.Agility)+((12/6)*self.Speed)+((10/6)*self.Offense) )
