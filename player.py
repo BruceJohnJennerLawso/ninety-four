@@ -107,7 +107,7 @@ class Skater(Player):
 		print "___________________________________________________________________\n"
 		
 		print "%s %s" % (self.firstName, self.lastName)
-		print "%s              | Shoots %s     " % \
+		print "%s             | Shoots %s     " % \
 		(self.Position.upper(), handed);
 		
 		print "Agility %d      | Speed %d         | Offense %d        | Defense %d" % \
@@ -119,7 +119,7 @@ class Skater(Player):
 		print "Checking %d     | Pass Accuracy %d | Roughness %d      | Aggression %d" % \
 		(self.Checking, self.passAccuracy, self.Roughness, self.Aggression);
 		
-		print "___________________________________________________________________\n"	
+		print "___________________________________________________________________\n\n"	
 
 			
 	def generateOverallRating(self):
@@ -194,7 +194,7 @@ def isRightWing(i):
 		return False		
 
 def isCenter(i):
-	if(caseInsensitiveMatch(i, "c")):
+	if(caseInsensitiveMatch(i, "c ")):
 		return True
 	else:
 		return False			
@@ -275,15 +275,24 @@ class Goaltender(Player):
 		
 		print "___________________________________________________________________\n"
 		
-		print "Puck Control %d | Glove Hand %s| Name: %s %s " % \
-		(self.puckControl, handed, self.firstName, self.lastName);
+		print "%s %s" % (self.firstName, self.lastName)
+
+
+		print "G              | Puck Control %d  | Glove Hand %s" % \
+		(self.puckControl, handed);
 		
 		print "Agility %d      | Speed %d         | Offense %d     | Defense %d" % \
 		(self.Agility, self.Speed, self.Offense, self.Defense);
 
 		print "Stick Left %d   | Glove Left %d    | Glove Right %d | Stick Right %d" % \
 		(self.stickLeft, self.gloveLeft, self.gloveRight, self.stickRight);
-		print "___________________________________________________________________"		
+		print "___________________________________________________________________\n\n"		
+
+
+
+
+
+
 
 	def generateOverallRating(self):
 		Rating = (((12/6)*self.Agility)+((12/6)*self.Speed)+((10/6)*self.Offense) )
