@@ -80,3 +80,7 @@ class Team:
 	def getAbbreviation(self):
 		return self.Abbreviation
 		
+		
+if(__name__ == "__main__"):
+	
+		
