@@ -123,10 +123,10 @@ class Skater(Player):
 
 			
 	def generateOverallRating(self):
-		Rating = (((7.0/6.0)*self.Agility)+((7.0/6.0)*self.Speed)+((8.0/6.0)*self.Offense) )
-		Rating += ( ((8.0/6.0)*self.Defense)+((7.0/6.0)*self.Checking)+((7.0/6.0)*self.stickHandling) ) 
-		Rating += ( ((7.0/6.0)*self.shotAccuracy)+((7.0/6.0)*self.Endurance)+((0.0)*self.shotBias) )		
-		Rating += ( ((3.0/6.0)*self.Aggression)+((7.0/6.0)*self.Agility)+((7.0/6.0)*self.passAccuracy) )
+		Rating = (((9.0/6.0)*self.Agility)+((9.0/6.0)*self.Speed)+((10.0/6.0)*self.Offense) )
+		Rating += ( ((10.0/6.0)*self.Defense)+((9.0/6.0)*self.Checking)+((9.0/6.0)*self.stickHandling) ) 
+		Rating += ( ((9.0/6.0)*self.shotAccuracy)+((9.0/6.0)*self.Endurance)+((0.0)*self.shotBias) )		
+		Rating += ( ((5.0/6.0)*self.Aggression)+((9.0/6.0)*self.Agility)+((9.0/6.0)*self.passAccuracy) )
 		return Rating
 		
 	def getAgility(self):
