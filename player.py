@@ -35,7 +35,7 @@ def generateRandomJerseyNumber(bad_numbers, depth=0):
 #	Stick Handling (Gretzky 6)
 #	Shot Accuracy (Gretzky 2? similar scale to others)
 #	Endurance (Gretzky 6)
-#	Roughness (Gretzky 0)
+#	Roughness (Gretzky 0) (actually shotBias)
 #	Pass Accuracy (Gretzky 0)
 #	Aggression (Stevens 3, Probert, Kypreos 5)
 
@@ -106,10 +106,15 @@ class Skater(Player):
 		
 		print "___________________________________________________________________\n"
 		
-		print "%s %s %d" % (self.firstName, self.lastName, self.overallRating)
-		print "%s             | Shoots %s     " % \
-		(self.Position.upper(), handed);
-		
+		print "#%d %s %s" % (self.jerseyNumber, self.firstName, self.lastName)
+		if(self.Position == "c"):
+			print "%s   OVR %d     | Shoots %s     " % \
+			(self.Position.upper(), self.overallRating, handed);
+			## extra space so the bars line up
+			## this was driving me nuts
+		else:
+			print "%s  OVR %d     | Shoots %s     " % \
+			(self.Position.upper(), self.overallRating, handed);			
 		print "Agility %d      | Speed %d         | Offense %d        | Defense %d" % \
 		(self.Agility, self.Speed, self.Offense, self.Defense);
 
@@ -275,11 +280,11 @@ class Goaltender(Player):
 		
 		print "___________________________________________________________________\n"
 		
-		print "%s %s %d" % (self.firstName, self.lastName, self.overallRating)
+		print "#%d %s %s" % (self.jerseyNumber, self.firstName, self.lastName)
 
 
-		print "G              | Puck Control %d  | Glove Hand %s" % \
-		(self.puckControl, handed);
+		print "G  OVR %d      | Puck Control %d  | Glove Hand %s" % \
+		(self.overallRating,self.puckControl, handed);
 		
 		print "Agility %d      | Speed %d         | Offense %d     | Defense %d" % \
 		(self.Agility, self.Speed, self.Offense, self.Defense);
