@@ -172,7 +172,21 @@ def createRandomPlayer(first_name, last_name):
 	return newPlayer
 	
 	
+def generateRandomPlayer(nationality):
+	if(nationality == "canadian"):
+		firstNames = nameList("cdnFirst.txt")
+		lastNames = nameList("cdnLast.txt")		
+
+	first = "foo"
+	last = "foo"
 	
+	while(first == last):
+		first = firstNames.randomName()
+		last = lastNames.randomName()
+
+	newPlayer = createRandomPlayer(first, last)
+	return newPlayer
+
 	
 	
 	

@@ -86,6 +86,7 @@ if(__name__ == "__main__"):
 	canuckistanLastNames = nameList("cdnLast.txt")	
 	
 	for i in range(0,30):
-		newPlayer = createRandomPlayer(canuckistanFirstNames.randomName(), canuckistanLastNames.randomName())
-		newPlayer.Description()
+		
+		
+		generateRandomPlayer("canadian").Description()
 		
