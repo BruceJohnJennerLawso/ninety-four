@@ -71,7 +71,7 @@ class Skater(Player):
 	def __init__(self, first_name, last_name, jersey_number,\
 				agility, speed, offense, defense, shot_power, checking,\
 				right_handed, fighting, stick_handling, shot_accuracy, endurance,\
-				roughness, pass_accuracy, aggression, position, overall_rating=-1):
+				shotBias, pass_accuracy, aggression, position, overall_rating=-1):
 		super(Skater, self).__init__(first_name, last_name, jersey_number)
 		self.Agility = agility
 		self.Speed = speed
@@ -85,7 +85,7 @@ class Skater(Player):
 		self.stickHandling = stick_handling
 		self.shotAccuracy = shot_accuracy
 		self.Endurance = endurance
-		self.Roughness = roughness
+		self.shotBias = shotBias
 		self.passAccuracy = pass_accuracy
 		self.Aggression = aggression
 		self.Position = position
@@ -106,7 +106,7 @@ class Skater(Player):
 		
 		print "___________________________________________________________________\n"
 		
-		print "%s %s" % (self.firstName, self.lastName)
+		print "%s %s %d" % (self.firstName, self.lastName, self.overallRating)
 		print "%s             | Shoots %s     " % \
 		(self.Position.upper(), handed);
 		
@@ -116,17 +116,17 @@ class Skater(Player):
 		print "Shot Power %d   | Shot Accuracy %d | Stick Handling %d | Endurance %d" % \
 		(self.shotPower, self.shotAccuracy, self.stickHandling, self.Endurance);
 
-		print "Checking %d     | Pass Accuracy %d | Roughness %d      | Aggression %d" % \
-		(self.Checking, self.passAccuracy, self.Roughness, self.Aggression);
+		print "Checking %d     | Pass Accuracy %d | Shot Bias %d      | Aggression %d" % \
+		(self.Checking, self.passAccuracy, self.shotBias, self.Aggression);
 		
 		print "___________________________________________________________________\n\n"	
 
 			
 	def generateOverallRating(self):
-		Rating = (((7/6)*self.Agility)+((7/6)*self.Speed)+((7/6)*self.Offense) )
-		Rating += ( ((7/6)*self.Defense)+((7/6)*self.Checking)+((7/6)*self.stickHandling) ) 
-		Rating += ( ((7/6)*self.shotAccuracy)+((7/6)*self.Endurance)+((2/6)*self.Roughness) )		
-		Rating += ( ((3/6)*self.Aggression)+((7/6)*self.Agility)+((7/6)*self.passAccuracy) )
+		Rating = (((7.0/6.0)*self.Agility)+((7.0/6.0)*self.Speed)+((8.0/6.0)*self.Offense) )
+		Rating += ( ((8.0/6.0)*self.Defense)+((7.0/6.0)*self.Checking)+((7.0/6.0)*self.stickHandling) ) 
+		Rating += ( ((7.0/6.0)*self.shotAccuracy)+((7.0/6.0)*self.Endurance)+((0.0)*self.shotBias) )		
+		Rating += ( ((3.0/6.0)*self.Aggression)+((7.0/6.0)*self.Agility)+((7.0/6.0)*self.passAccuracy) )
 		return Rating
 		
 	def getAgility(self):
@@ -162,8 +162,8 @@ class Skater(Player):
 	def getEndurance(self):
 		return self.Endurance
 		
-	def getRoughness(self):
-		return self.Roughness
+	def getShotBias(self):
+		return self.shotBias
 		
 	def getPassAccuracy(self):
 		return self.passAccuracy
@@ -275,7 +275,7 @@ class Goaltender(Player):
 		
 		print "___________________________________________________________________\n"
 		
-		print "%s %s" % (self.firstName, self.lastName)
+		print "%s %s %d" % (self.firstName, self.lastName, self.overallRating)
 
 
 		print "G              | Puck Control %d  | Glove Hand %s" % \
@@ -295,9 +295,9 @@ class Goaltender(Player):
 
 
 	def generateOverallRating(self):
-		Rating = (((12/6)*self.Agility)+((12/6)*self.Speed)+((10/6)*self.Offense) )
-		Rating += ( ((10/6)*self.Defense)+((12/6)*self.puckControl)+((11/6)*self.stickRight) ) 
-		Rating += ( ((11/6)*self.stickLeft)+((12/6)*self.gloveLeft)+((12/6)*self.gloveRight) )		
+		Rating = (((12.0/6.0)*self.Agility)+((12.0/6.0)*self.Speed)+((10.0/6.0)*self.Offense) )
+		Rating += ( ((10.0/6.0)*self.Defense)+((12.0/6.0)*self.puckControl)+((11.0/6.0)*self.stickRight) ) 
+		Rating += ( ((11.0/6.0)*self.stickLeft)+((12.0/6.0)*self.gloveLeft)+((12.0/6.0)*self.gloveRight) )		
 		return Rating
 		
 	def getAgility(self):

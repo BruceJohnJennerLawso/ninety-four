@@ -39,7 +39,7 @@ def createScoringWinger(first_name, last_name):
 			randomIntegerValue(3,6), randomIntegerValue(2,4),\
 			randomBoolean(), randomIntegerValue(1,4),\
 			randomIntegerValue(2,5), randomIntegerValue(3,6),\
-			randomIntegerValue(2,4), randomIntegerValue(2,4),\
+			randomIntegerValue(2,4), randomIntegerValue(3,6),\
 			randomIntegerValue(3,4), randomIntegerValue(2,4),\
 			position )
 	return newPlayer		
@@ -73,7 +73,7 @@ def createOffensiveCenter(first_name, last_name):
 			randomIntegerValue(2,5), randomIntegerValue(1,4),\
 			randomBoolean(), randomIntegerValue(3,4),\
 			randomIntegerValue(3,5), randomIntegerValue(2,5),\
-			randomIntegerValue(3,6), randomIntegerValue(2,4),\
+			randomIntegerValue(3,6), randomIntegerValue(0,5),\
 			randomIntegerValue(3,6), randomIntegerValue(2,4),\
 			position )				
 	return newPlayer
@@ -87,7 +87,7 @@ def createDefensiveCenter(first_name, last_name):
 			randomIntegerValue(2,4), randomIntegerValue(3,6),\
 			randomBoolean(), randomIntegerValue(3,4),\
 			randomIntegerValue(2,5), randomIntegerValue(1,4),\
-			randomIntegerValue(3,6), randomIntegerValue(2,5),\
+			randomIntegerValue(3,6), randomIntegerValue(3,4),\
 			randomIntegerValue(2,5), randomIntegerValue(3,5),\
 			position )	
 	return newPlayer
@@ -104,7 +104,7 @@ def createDefensiveDefenseman(first_name, last_name):
 			randomIntegerValue(1,6), randomIntegerValue(3,6),\
 			randomBoolean(), randomIntegerValue(3,6),\
 			randomIntegerValue(1,4), randomIntegerValue(1,3),\
-			randomIntegerValue(3,6), randomIntegerValue(2,6),\
+			randomIntegerValue(3,6), randomIntegerValue(1,4),\
 			randomIntegerValue(1,4), randomIntegerValue(3,6),\
 			position )	
 	return newPlayer
@@ -121,7 +121,7 @@ def createOffensiveDefenseman(first_name, last_name):
 			randomIntegerValue(3,5), randomIntegerValue(1,4),\
 			randomBoolean(), randomIntegerValue(2,4),\
 			randomIntegerValue(2,5), randomIntegerValue(2,5),\
-			randomIntegerValue(3,6), randomIntegerValue(2,5),\
+			randomIntegerValue(3,6), randomIntegerValue(3,6),\
 			randomIntegerValue(3,5), randomIntegerValue(2,5),\
 			position )		
 	return newPlayer
