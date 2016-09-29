@@ -1,0 +1,1780 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>NHL'94 | Editing the BIN</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Latest compiled and minified Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<!-- Bootstrap theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+<!-- Custom additional CSS -->
+<link rel="stylesheet" href="/css/global.css">
+<!-- Google Fonts -->
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Russo One">
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto Condensed">
+<!-- jQuery library -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<!-- jQuery sticky -->
+<script src="/jslib/jquery.sticky.js"></script>
+<!-- Latest compiled and minified Bootstrap JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<!-- Load header/footer on page -->
+<script type="text/javascript">$(document).ready(function(e) {$('#siteheader').load('/html/header.html'),$('#sitefooter').load('/html/footer.html');});</script>
+
+</head>
+<body>
+<!-- Display header on page -->
+<div id="siteheader"></div>
+
+<div class="margin_top"></div>
+<div class="container-fluid">
+<!-- Begin body content -->
+<h2><img class="siren"> Editing the BIN (Gens)</h2>
+<p>Below are all of the links to a specific How-To or Tutorial for editing the .bin file. Remember, this file is the Genesis version of the game. You can download the Bin file <a href="/multimedia/apps/nhl94_original_bin.zip">here</a> or on the downloads page. If you are new to editing, make sure you read the <a href="/html/editing/edit.php">main editing page</a> first.</p>
+
+<div style="background-image:url(/images/editing/fade.gif)">
+<h3><img class="puck"> How-To's and Tutorials</h3>
+      <img src="/images/player_gifs/chi_murphy.gif" class="pull-right" title="Joe Murphy"><h4>Hex Workshop</h4>
+      <ul>
+      <li><a href="#edit_bin_checksum">How to fix checksum error</a> *Important*</li>
+      <li><a href="#edit_bin_player_info">How to edit player names, numbers, ratings</a></li>
+      <li><a href="#edit_bin_uniforms">How to edit player uniform colors</a></li>
+      <li><a href="#edit_bin_periods">How to edit regular period/overtime period names and lenghts</a></li>
+      <li><a href="#edit_bin_lines_goalies">How to edit default lines and number of goalies</a></li>
+      <li><a href="#edit_bin_ice_rink">How to edit ice color and rink data</a></li>
+      <li><a href="#edit_bin_penalties">How to edit penalty names and lengths</a></li>
+      <li><a href="#edit_bin_startup_banners">How to edit startup banners</a></li>
+      <li><a href="#edit_bin_team_ratings">How to edit team overall ratings</a></li>
+      <li><a href="#edit_bin_isles_rangers_names">How to edit the Islanders and Rangers team names at the startup screen</a></li>
+      <li><a href="#edit_bin_startup_screen_defaults">How to edit the defaults on the startup screen menu</a></li>
+      </ul>
+      <h4>Tile Layer Pro</h4>
+      <ul>
+      <li><a href="#edit_bin_icelogos">How to edit center ice logos</a></li>
+      <li><a href="#edit_bin_puck">How to edit the puck</a></li>
+      <li><a href="#edit_bin_playerstar">How to edit the player star</a></li>
+      </ul>
+      <h4>Other</h4>
+      <ul>
+      <li><a href="http://forum.nhl94.com/index.php?showtopic=8030" target="_blank">General Forum Thread Guide To Editing</a> (added June 4th, 2009 courtesy smozoma)</li>
+      <li><a href="http://forum.nhl94.com/index.php?showtopic=8030" target="_blank">How to fix the weight bug</a> (added June 4th, 2009 courtesy smozoma)</li>
+      <li><a href="#edit_bin_play_on_genesis">How to play an edited BIN file on a Genesis console</a></li>
+      <li><a href="/html/editing/player_card_tutorial/Player-Card-Tutorial.htm" target="_blank">wboy's Player Card Tutorial</a> (added June 1st, 2009 courtesy wboy)</li>
+      <li><a href="/html/editing/player_card_tutorial/NHL-94-Player-Cards.htm" target="_blank">wboy's NHL 94 Player Cards Info</a> (added June 1st, 2009 courtesy wboy)</li>
+      <li><a href="/html/editing/player_card_tutorial/NHL-95-Player-Cards.htm" target="_blank">wboy's NHL 95 Player Cards Info</a> (added June 1st, 2009 courtesy wboy)</li>
+      </ul>
+    <hr>
+</div>
+
+<span class="anchor" id="edit_bin_checksum"></span>
+<div style="background-image:url(/images/editing/fade.gif)">
+<h3><img class="puck"> How to fix checksum error *Important*</h3>
+          <p>Important Item to Change Before Playing An Edited .bin File<br>
+          by <a href="mailto:admin@nhl94.com">Evan</a></p>
+          <p>Before you can play an edited .bin file, you must change the value highlighted in screenshot 1 below (BOFC) to screenshot 2 (4E75). This is the offset of 000FFACB, and you only have to do this for the .bin (Genesis) version of the game.</p>
+          <p class="alert-info">Bin File Offset: 000FFACB</p>
+          <p>Screenshot 1 (Incorrect value.) <br>
+            <img src="/images/editing/checksum001.gif" title="Screenshot 1"></p>
+          <p><span class="bold_black">Screenshot 2</span> (Correct value.)<br>
+            <img src="/images/editing/checksum002.gif" title="Screenshot 2"></p>
+          <p>The .bin file won't play unless you change this code.</p>
+          <p align="center"><a href="/html/editing/edit_bin.php">Back to Top</a></p>
+<hr>
+</div>
+
+<span class="anchor" id="edit_bin_player_info"></span>
+<div style="background-image:url(/images/editing/fade.gif)">
+<h3><img class="puck"> How to edit player names, numbers, ratings</h3>
+      <p>by <a href="mailto:admin@nhl94.com">Evan</a></p>
+      <h4>Player Names, Numbers, Ratings</h4>
+      <p> Below is a chart I made to help understand what the player's hex code means in Hex Workshop. In this example, I have highlighted Dave Gagner's data from the original NHL94.bin file. To change names, numbers, and ratings, you would simply type over the data.</p>
+    <p><img src="/images/editing/players_ratings.gif" title="Players name, number, ratings"></p>
+      <ul>
+      <li><img src="/images/editing/color_pink.gif"> player's character length (this is a code telling the game how many characters this name is, 0E = 11 characters - this chart is in the player ratings chart below)</li>
+      <li><img src="/images/editing/color_magenta.gif"> player's name</li>
+      <li><img src="/images/editing/color_blue.gif"> space to finish player's name length (for some players, this is just an extra space to fill up the remaining character of their name)</li>
+      <li><img src="/images/editing/color_orange.gif"> player's number</li>
+      <li><img src="/images/editing/color_green.gif"> player's ratings (these ratings are all explained in the player ratings chart below)</li>
+      <li><img src="/images/editing/color_yellow.gif"> part of the next player's character length (in this case, for Neal Broten, 000E)</li>
+      </ul>
+      <p class="alert-warning">Note: Each team's roster must keep the same number of characters. If you switch Dave Gagner's name from 11 characters to 9, you must add 2 characters somewhere else on that roster.</p>
+      <h4>Player Jersey Numbers</h4>
+      <p>To edit a player's jersey number, simply find their name in the .bin file using Hex Workshop, and their number will be right after their name. I have highlighted Nelson Emerson's number (07) in the screenshot below to give you an example. Now you would simply type the new number over it. Sometimes you may see a &quot;00&quot; between the players name and their number. This is just to give a space to certain player's names.</p>
+      <p><img src="/images/editing/players_number.gif" title="Editing a players number"></p>
+      <table class="table table-bordered table-striped">
+        <thead>
+        <tr>
+          <td colspan="5">
+              <p align="center">Player Ratings Chart - Use this for reference to edit all ratings.<br>
+                Note: All ratings are  0-6 except for weight and handedness which are 0-9,A-F.</p>
+          </td>
+        </tr>
+        <tr>
+          <th>Player's Weight</th>
+          <th>All Other Abilities</th>
+          <th>Forwards and Defensemen</th>
+          <th>Goalies</th>
+          <th>Character Length</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>0 - 140</td>
+          <td>0 - 14.3</td>
+          <td>1st Digit - Weight</td>
+          <td>1st Digit - Weight</td>
+          <td>0A = 6,7 letters</td>
+        </tr>
+        <tr>
+          <td>1 - 148</td>
+          <td>1 - 28.6</td>
+          <td>2nd Digit - Agility</td>
+          <td>2nd Digit - Agility</td>
+          <td>0C = 8,9 letters</td>
+        </tr>
+        <tr>
+          <td>2 - 156</td>
+          <td>2 - 42.9</td>
+          <td>3rd Digit - Speed</td>
+          <td>3rd Digit - Speed</td>
+          <td>0E = 10,11 letters</td>
+        </tr>
+        <tr>
+          <td>3 - 164</td>
+          <td>3 - 57.2</td>
+          <td>4th Digit - Offensive Awareness</td>
+          <td>4th Digit - (leave at zero)</td>
+          <td>10 = 12,13 letters</td>
+        </tr>
+        <tr>
+          <td>4 - 172</td>
+          <td>4 - 71.5</td>
+          <td>5th Digit - Defensive Awareness</td>
+          <td>5th Digit - Defensive Awareness</td>
+          <td>12 = 14,15 letters</td>
+        </tr>
+        <tr>
+          <td>5 - 180</td>
+          <td>5 - 85.8</td>
+          <td>6th Digit - Shot Power</td>
+          <td>6th Digit - Puck Control</td>
+          <td>14 = 16,17 letters</td>
+        </tr>
+        <tr>
+          <td>6 - 188</td>
+          <td>6 - 100.1</td>
+          <td>7th Digit - Checking</td>
+          <td>7th Digit - (leave at zero)</td>
+          <td>16 = 18,19 letters</td>
+        </tr>
+        <tr>
+          <td>7 - 196</td>
+          <td></td>
+          <td>8th Digit - Handedness<br>
+            (0,2,4,6,8,A,C,E) - Lefty<br>
+            (1,3,5,7,9,B,D,F) - Righty</td>
+          <td>8th Digit - Handedness<br>
+            (0,2,4,6,8,A,C,E) - Lefty<br>
+            (1,3,5,7,9,B,D,F) - Righty</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>8 - 204</td>
+          <td></td>
+          <td>9th Digit - Stick Handling</td>
+          <td>9th Digit - (leave at zero)</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>9 - 212</td>
+          <td></td>
+          <td>10th Digit - Shot Accuracy</td>
+          <td>10th Digit - (leave at zero)</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>A - 220</td>
+          <td></td>
+          <td>11th Digit - Endurance</td>
+          <td>11th Digit - Stick Right</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>B - 228</td>
+          <td></td>
+          <td>12th Digit - (leave at zero, this could have been for fighting possibly)</td>
+          <td>12th Digit - Stick Left</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>C - 236</td>
+          <td></td>
+          <td>13th Digit - Pass Accuracy</td>
+          <td>13th Digit - Glove Right</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>D - 244</td>
+          <td></td>
+          <td>14th Digit - Agressiveness</td>
+          <td>14th Digit - Glove Left</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>E - 252</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>F - 260</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        </tbody>
+      </table> 
+      <p align="center"><a href="/html/editing/edit_bin.php">Back to Top</a></p>
+      <hr>
+</div>
+
+
+<span class="anchor" id="edit_bin_uniforms"></span>
+<div style="background-image:url(/images/editing/fade.gif)">
+<h3><img class="puck"> How to edit player uniform colors</h3>
+    <p>by <a href="mailto:admin@nhl94.com">Evan</a></p>
+          <p>You can easily edit team's uniform colors by editing just a few things in the hex code (using Hex Workshop). For example, changing the first set of numbers in the yellow (0006) to something different, like (CCCC), will change the pants color to grey. Use the chart below as a reference to which colors are for what parts of the uniform. The first set of colors is the home colors, and the second set of colors is the away.</p>
+          <p>The colors for a team begin before that team's roster. So in the example below, we are looking at Calgary's colors, not Buffalo's.</p>
+          <p class="alert-warning">Note: Editing a team's uniform colors will change the colors of their ice logo as well.</p>
+    <p><img src="/images/editing/uniform_colors.gif" title="Jersey Colors"></p>
+    <ul>
+    <li><img src="/images/editing/color_yellow.gif"> Pants color - 1st 4 digits (0006) is the main color, 2nd 4 digits (0008) is the lighter color, and 3rd 4 digits (000A) is the darker color (this creates a fade in the pants, so try to make these colors similar)</li>
+    <li><img src="/images/editing/color_peach.gif"> Pants stripe and elbow trim</li>
+    <li><img src="/images/editing/color_green.gif"> Shoulder trim, waist stripe, and top sock stripe</li>
+    <li><img src="/images/editing/color_orange.gif"> Shoulder color, elbow, and sock</li>
+    <li><img src="/images/editing/color_blue.gif"> Jersey and helmet - 1st 4 digits (0CCC) is the main color, 2nd 4 digits (0EEE) is the lighter color, and 3rd 4 digits (0AAA) is the darker color (this creates a fade in the jersey, so try to make these colors similar)</li>
+    <li><img src="/images/editing/color_magenta.gif"> Stick (same for all teams)</li>
+    <li><img src="/images/editing/color_pink.gif"> Player shadows on the ice (same for all teams)</li>
+    <li><img src="/images/editing/colors_grey.gif"> Player skin color - 1st is main color, 2nd set is shadow color (same for all teams)</li>
+    </ul>
+    <p align="center"><a href="/html/editing/edit_bin.php">Back to Top</a></p>
+<hr>
+</div>
+
+<span class="anchor" id="edit_bin_periods"></span>
+<div style="background-image:url(/images/editing/fade.gif)">
+<h3><img class="puck"> How to edit regular period/overtime period names and lenghts</h3>
+    <p>by <a href="mailto:admin@nhl94.com">Evan</a></p>
+          <p>Thanks to some members of the community, we are able to edit the period lengths. Below are a few screenshots and tables to help you understand how this is done.</p>
+          <p>Changing the Purple 0258 will edit the overtime length. Changing the Blue 012C will edit the &quot;5 minute periods&quot; length. Changing the Orange 0258 will edit the &quot;10 minute periods&quot; length. Changing the Green 04B0 will edit the &quot;20 minute periods&quot; length.</p>
+          <p>Below are some of the period lengths you could try. Just remember to fix the text that goes with the lenghts using the 2nd and 3rd screenshots as reference.</p>
+          <ul>
+            <li>001E = 30 seconds</li>
+            <li>003C = 60 seconds (1 minute)</li>
+            <li>00B4 = 180 seconds (3 minutes)</li>
+            <li>012C = 300 seconds (5 minutes)</li>
+            <li>01A4 = 420 seconds (7 minutes)</li>
+            <li>0258 = 600 seconds (10 minutes)</li>
+            <li>04B0 = 1200 seconds (20 minutes)</li>
+    </ul>
+    <p class="alert-info">Bin File Offset: 0000782C (lengths)<br>
+    Bin File Offset: 000F7F3E (names)</p>
+    <p>Screenshot 1<br>
+    <img src="/images/editing/period_lengths.gif" title="Period Lengths"></p>
+    <ul>
+    <li><img src="/images/editing/color_magenta.gif"> overtime period length (this is 10 minutes by default, to make it 5 minutes change the 0258 to 012C)</li>
+    <li><img src="/images/editing/color_blue.gif"> 1st game length setting (this is 5 minutes by default, which in hex 012C = 5 minutes)</li>
+    <li><img src="/images/editing/color_orange.gif"> 2nd game length setting (this is 10 minutes by default, which in hex 0258 = 10 minutes)</li>
+    <li><img src="/images/editing/color_green.gif"> 3rd game length setting (this is 20 minutes by default, which in hex 04B0 = 20 minutes)</li>
+    </ul>
+    <p>Here's how to change the names of the period lengths on the startup screen. Simply change the text of these items and that will be what comes up in the startup screen menu.</p>
+    <p>Screenshot 2<br>
+    <img src="/images/editing/period_lengths_names.gif" title="Period Lengths Text"></p>
+    <ul>
+    <li><img src="/images/editing/color_yellow.gif"> 5 Minutes</li>
+    <li><img src="/images/editing/color_peach.gif"> 10 Minutes</li>
+    <li><img src="/images/editing/color_pink.gif"> 20 Minutes</li>
+    </ul>
+    <p>This is an example of changing the period length text from &quot;5 Minutes&quot; to &quot;1 Minute&quot;.</p>
+    <p>Screenshot 3<br>
+    <img src="/images/editing/period_lengths_text.gif" title="1 Minute"></p>
+    <p align="center"><a href="/html/editing/edit_bin.php">Back to Top</a></p>
+<hr>
+</div>
+
+<span class="anchor" id="edit_bin_lines_goalies"></span>
+<div style="background-image:url(/images/editing/fade.gif)">
+<h3><img class="puck"> How to edit default lines and number of goalies</h3>
+    <p>by <a href="mailto:admin@nhl94.com">Evan</a></p>
+          <p>This is how you can edit the number of goalies and/or forwards a team has. This is also where you adjust the team's lines to you liking.</p>
+    <p><img src="/images/editing/goalie_number.gif"></p>
+          <p>Goalies (Go to the 11th set of 4 digits after the &quot;j&quot; that starts the away jersey data.)</p>
+          <p>You can have a maximum of 4 goalies per team in the game. To add or subtract a goalie, you have to edit the 11th set of 4 digits after the &quot;j&quot; (highlighted in the screenshot above). Changing a zero to anything besides zero will add a goalie and changing a character to a zero will subtract one. The Islanders and Rangers both have 1 goalie so this set of digits is 9000 for them. Changing them to 9900 gives them 2 goalies and 9990 gives them 3 and 9999 gives them 4. These numbers don&rsquo;t necessarily have to be a 9. Allstars East (above) has a CBC0 for their goalies. C is a goalie, B is a goalie, and C is a goalie. Changing the data from CBC0 to 9990 won't change anything in the game.</p>
+          <p class="alert-warning">Note: Adding a goalie to a team with 1 goalie will make the 2nd player listed in the hex code a goalie, but he will also appear as a forward until you edit the default lines.</p>
+          <h4>Line editing</h4>
+          <p>Look in the hex editor and write down each player in the order in which they appear in the code, then write down their order. When you get to the 10th player, list him as 0A, 11th as 0B, etc. 15th is 0F but for player 16 list him as 10, player 17 is listed as 11, etc. After you have done this, look after the 4 digit goalie code. You&rsquo;ll see an 01. Starting after the 01 the teams &ldquo;best line&rdquo; is listed. This is the default lineup when line changes are off. Starting after the 01, those players are listed. It goes in the normal order, LD, RD, LW, C, RW. Just enter in the player orders you took down of each player you want to appear in each position on your &ldquo;best line&rdquo;. Starting after the next &ldquo;01&rdquo; is scoring line 1, then the next &ldquo;01&rdquo; is scoring line 2 and it goes in order all the way up to Penalty Kill 2.</p>
+          <p>I have highlighted Allstars East's lines in the example below.</p>
+          <p><img src="/images/editing/editing_lines.gif" title="Editing Lines"></p>
+          <ul>
+          <li><img src="/images/editing/color_pink.gif"> best line (when line changes are off)</li>
+          <li><img src="/images/editing/color_magenta.gif"> scoring 1</li>
+          <li><img src="/images/editing/color_blue.gif"> scoring 2</li>
+          <li><img src="/images/editing/color_orange.gif"> checking line</li>
+          <li><img src="/images/editing/color_green.gif"> power play 1</li>
+          <li><img src="/images/editing/color_peach.gif"> power play 2</li>
+          <li><img src="/images/editing/color_yellow.gif"> penalty kill 1</li>
+          <li><img src="/images/editing/colors_grey.gif"> penalty kill 2</li>
+          </ul>
+          <p class="alert-warning">Note: If you have added a goalie, then this will make your first forward appear in order &ldquo;03&quot; in the hex code when he was previously referred to &ldquo;02&rdquo;. The lines still point to player &ldquo;02&rdquo; so this explains why your new backup goalie will appear on some lines as a forward.</p>
+    <p align="center"><a href="/html/editing/edit_bin.php">Back to Top</a></p>
+<hr>
+</div>
+
+
+<span class="anchor" id="edit_bin_ice_rink"></span>
+<div style="background-image:url(/images/editing/fade.gif)">
+<h3><img class="puck"> How to edit ice color and rink data</h3>
+    <p>by <a href="mailto:admin@nhl94.com">Evan</a></p>
+          <p>Below is a screenshot of the rink data showing how to switch the ice color from blue to white. This is something that once you do, you may never want to play with the blue ice again.</p>
+    <p class="alert-info">Bin File Offset: 00059924</p>
+    <p><img src="/images/editing/white_ice_bin.gif" title="Changing ice color to white"></p>
+          <ul>
+          <li><img src="/images/editing/color_pink.gif"> the ice color - simply change this number from 0EE8 to 0EEE</li>
+          <li><img src="/images/editing/color_blue.gif"> center area of the lights reflection on the ice - you can just leave this at 0EEE</li>
+          <li><img src="/images/editing/color_yellow.gif"> lights reflection - also change this from 0EEC to 0EEE</li>
+          </ul>
+    <p align="center"><a href="/html/editing/edit_bin.php">Back to Top</a></p>
+<hr>
+</div>
+
+
+<span class="anchor" id="edit_bin_penalties"></span>
+<div style="background-image:url(/images/editing/fade.gif)">
+<h3><img class="puck"> How to edit penalty names and lengths</h3>
+    <p>by <a href="mailto:admin@nhl94.com">Evan</a></p>
+          <p>Here's how you can change the length of each penalty in the game. A useful edit of this information could be making the second Roughing penalty a 4 minute double minor. Basically you would just change any of the &quot;02&quot;s below to whatever you like. &quot;02&quot; equals 2 minutes in the penalty box for whoever is called the penalty. You would simply make it &quot;01&quot;, &quot;04&quot;, &quot;05&quot;, &quot;10&quot;, or whatever you like. It seems that you can only have penalties in one minute intervals.</p>
+    <p>You can also edit the name of the penalty as you would change a player's name. Maybe changing one of the &quot;Roughing's to a &quot;Boarding&quot; call. Another possibility could be making a misconduct penalty worth 10 minutes.</p>
+    <p class="alert-info">Bin File Offset: 00018ED5</p>
+    <p><img src="/images/editing/penalty_lengths.gif" title="Editing Penalty Lengths"></p>
+          <ul>
+          <li><img src="/images/editing/color_yellow.gif"> Charging penalty length</li>
+          <li><img src="/images/editing/color_peach.gif"> Slashing penalty length </li>
+          <li><img src="/images/editing/color_green.gif"> Tripping penalty length </li>
+          <li><img src="/images/editing/color_orange.gif"> Roughing 1 penalty length</li>
+          <li><img src="/images/editing/color_blue.gif"> Roughing 2 penalty length </li>
+          <li><img src="/images/editing/color_magenta.gif"> Hooking penalty length </li>
+          <li><img src="/images/editing/color_pink.gif"> Cross Check penalty length </li>
+          <li><img src="/images/editing/colors_grey.gif"> Interference penalty length </li>
+          <li><img src="/images/editing/color_aqua.gif"> Holding penalty length</li>
+          <li><img src="/images/editing/color_grassgreen.gif"> All 3 Fighting penalty lengths (1st two are the 5 min majors, the last one is the instigator)</li>
+          </ul>
+          <p>I've tried making the fighting &quot;28&quot;s into &quot;04&quot;s like most of the other penalty values to see if a player could be called for &quot;fighting&quot;, but I haven't seen it happen yet.</p>
+    <p align="center"><a href="/html/editing/edit_bin.php">Back to Top</a></p>
+<hr>
+</div>
+
+
+<span class="anchor" id="edit_bin_startup_banners"></span>
+<div style="background-image:url(/images/editing/fade.gif)">
+<h3><img class="puck"> How to edit startup banners</h3>
+    <p>by <a href="mailto:admin@nhl94.com">Evan</a></p>
+          <p>Each team has 2 banners color sets, home and away. You have to change the colors for each set for the edit to work properly.</p>
+    <p class="alert-info">Bin File Offset: 000F8BF8</p>
+    <p>First set is the right side on the startup screen, second set is for the left side of the startup screen. The first set of 4 digits is the top half color of the banner and the second set is for the bottom half color. For example, Anaheim's first set of values is 0000 which equals black. Their 2nd set of values is 0042, which is green.</p>
+          <h4>Team Banner Color Defaults</h4>
+    <div>
+            <table class="table table-bordered">
+              <tbody>
+              <tr>
+                <td>Anaheim - 0000 0042<br>
+                  Boston - 0000 008C<br>
+                  Buffalo - 0822 008C<br>
+                  Calgary - 0006 008C<br>
+                  Chicago - 0000 0006<br>
+                  Dallas - 0000 0042<br>
+                  Detroit - 0006 0006<br>
+                  Edmonton - 0600 004A<br>
+                  Florida - 004A 0600<br>
+                  Hartford - 0042 0822<br>
+                  Los Angeles - 0000 0000<br>
+                  Montreal - 0600 0006<br>
+                  New Jersey - 0020 0006<br>
+                  New York(I) - 0822 004A</td>
+                <td>New York(R) - 0600 0006<br>
+                  Ottawa - 0006 006A<br>
+                  Philadelphia - 0000 004A<br>
+                  Pittsburgh - 0000 008C<br>
+                  Quebec - 0600 0006<br>
+                  San Jose - 0000 0860<br>
+                  St. Louis - 0822 006A<br>
+                  Tampa Bay - 0000 0600<br>
+                  Toronto - 0600 0600<br>
+                  Vancouver - 0000 008C<br>
+                  Washington - 0006 0600<br>
+                  Winnipeg - 0600 0006<br>
+                  Allstar East - 0000 004A<br>
+                  Allstar West - 0000 004A</td>
+              </tr>
+              </tbody>
+      </table>
+          </div>
+    <p>You would simply find these values, and replace them with your custom value.</p>
+    <p>Screenshot 1<br>
+            <img src="/images/editing/startup_banners/startup_banners01_bin.gif" title="Startup Banner Colors 1"></p>
+          <ul>
+          <li><img src="/images/editing/color_yellow.gif"> Anaheim's banner colors</li>
+          <li><img src="/images/editing/color_peach.gif"> Boston's banner colors</li>
+          <li><img src="/images/editing/color_green.gif"> Buffalo's banner colors</li>
+          <li><img src="/images/editing/color_orange.gif"> Calgary's banner colors</li>
+          <li><img src="/images/editing/color_blue.gif"> Chicago's banner colors</li>
+          <li><img src="/images/editing/color_magenta.gif"> Dallas's banner colors</li>
+          <li><img src="/images/editing/color_pink.gif"> Detroit's banner colors</li>
+          <li><img src="/images/editing/colors_grey.gif"> Edmonton's banner colors</li>
+          <li><img src="/images/editing/color_aqua.gif"> Florida's banner colors</li>
+          <li><img src="/images/editing/color_grassgreen.gif"> Hartford's banner colors</li>
+          </ul>
+          <hr>
+    <p>Screenshot 2<br>
+            <img src="/images/editing/startup_banners/startup_banners02_bin.gif" title="Startup Banner Colors 2"></p>
+            <ul>
+            <li><img src="/images/editing/color_yellow.gif"> Los Angeles's banner colors</li>
+            <li><img src="/images/editing/color_peach.gif"> Montreal's banner colors</li>
+            <li><img src="/images/editing/color_green.gif"> New Jersey's banner colors</li>
+            <li><img src="/images/editing/color_orange.gif"> New York Islanders banner colors</li>
+            <li><img src="/images/editing/color_blue.gif"> New York Rangers banner colors</li>
+            <li><img src="/images/editing/color_magenta.gif"> Ottawa's banner colors</li>
+            <li><img src="/images/editing/color_pink.gif"> Philadelphia's banner colors</li>
+            <li><img src="/images/editing/colors_grey.gif"> Pittsburgh's banner colors</li>
+            <li><img src="/images/editing/color_aqua.gif"> Quebec's banner colors</li>
+            <li><img src="/images/editing/color_grassgreen.gif"> San Jose's banner colors</li>
+            </ul>
+    <hr>
+    <p>Screenshot 3<br>
+            <img src="/images/editing/startup_banners/startup_banners03_bin.gif" title="Startup Banner Colors 3"></p>
+            <ul>
+            <li><img src="/images/editing/color_yellow.gif" width="45" height="20"> St. Louis's banner colors</li>
+            <li><img src="/images/editing/color_peach.gif" width="45" height="20"> Tampa Bay's banner colors</li>
+            <li><img src="/images/editing/color_green.gif" width="45" height="20"> Toronto's banner colors</li>
+            <li><img src="/images/editing/color_orange.gif" width="45" height="20"> Vancouver's banner colors</li>
+            <li><img src="/images/editing/color_blue.gif" width="45" height="20"> Washington's banner colors</li>
+            <li><img src="/images/editing/color_magenta.gif" width="45" height="20"> Winnipeg's banner colors</li>
+            <li><img src="/images/editing/color_pink.gif" width="45" height="20"> Allstar East's banner colors</li>
+            <li><img src="/images/editing/colors_grey.gif" width="45" height="20"> Allstar West's banner colors</li>
+            </ul>
+          <p>Once you've edited these colors to your liking, you can edit the tiles to say a different team name. Below is a chart of the default tile configuration for each team in the Bin. Using Tile Layer Pro, you can edit these tiles to what you like, and then specify the tile order in Hex Workshop.</p>
+          <p>Each banner has a total of 22 tiles, though almost every team shares tiles with other teams. New Jersey is a rare case where it has all 22 of it's own tiles. Each tile is given an ID. 2000, 2001, 2002, 2003, etc. 2800 means tile 2000 but mirrored.</p>
+    <table class="table table-bordered table-striped">
+            <thead>
+            <tr>
+              <th>1 of 4</th>
+              <th>Anaheim</th>
+              <th>Boston</th>
+              <th>Buffalo</th>
+              <th>Calgary</th>
+              <th>Chicago</th>
+              <th>Dallas</th>
+              <th>Detroit</th>
+              <th>Edmonton</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>1</td>
+              <td>2000</td>
+              <td>2000</td>
+              <td>2000</td>
+              <td>2000</td>
+              <td>2000</td>
+              <td>2000</td>
+              <td>2000</td>
+              <td>2000</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>2001</td>
+              <td>2001</td>
+              <td>2001</td>
+              <td>2001</td>
+              <td>2001</td>
+              <td>2001</td>
+              <td>2001</td>
+              <td>2060</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>2002</td>
+              <td>2011</td>
+              <td>201F</td>
+              <td>202D</td>
+              <td>203C</td>
+              <td>2001</td>
+              <td>2052</td>
+              <td>2061</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>2003</td>
+              <td>2012</td>
+              <td>2020</td>
+              <td>202E</td>
+              <td>203D</td>
+              <td>2048</td>
+              <td>2053</td>
+              <td>2062</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>2004</td>
+              <td>2013</td>
+              <td>2021</td>
+              <td>202F</td>
+              <td>203E</td>
+              <td>2023</td>
+              <td>2054</td>
+              <td>2063</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>2005</td>
+              <td>2014</td>
+              <td>2022</td>
+              <td>2030</td>
+              <td>202E</td>
+              <td>2049</td>
+              <td>2055</td>
+              <td>2064</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>2006</td>
+              <td>2015</td>
+              <td>2023</td>
+              <td>2031</td>
+              <td>203F</td>
+              <td>204A</td>
+              <td>2056</td>
+              <td>2048</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>2007</td>
+              <td>2016</td>
+              <td>2024</td>
+              <td>2032</td>
+              <td>2040</td>
+              <td>204B</td>
+              <td>2057</td>
+              <td>2065</td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td>2008</td>
+              <td>2017</td>
+              <td>2025</td>
+              <td>2033</td>
+              <td>2041</td>
+              <td>204C</td>
+              <td>2058</td>
+              <td>2064</td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>2001</td>
+              <td>2001</td>
+              <td>2001</td>
+              <td>2034</td>
+              <td>2001</td>
+              <td>2001</td>
+              <td>2001</td>
+              <td>2048</td>
+            </tr>
+            <tr>
+              <td>11</td>
+              <td>2800</td>
+              <td>2800</td>
+              <td>2800</td>
+              <td>2800</td>
+              <td>2800</td>
+              <td>2800</td>
+              <td>2800</td>
+              <td>2800</td>
+            </tr>
+            <tr>
+              <td>12</td>
+              <td>2009</td>
+              <td>2009</td>
+              <td>2009</td>
+              <td>2009</td>
+              <td>2009</td>
+              <td>2009</td>
+              <td>3000</td>
+              <td>2009</td>
+            </tr>
+            <tr>
+              <td>13</td>
+              <td>200A</td>
+              <td>200A</td>
+              <td>200A</td>
+              <td>200A</td>
+              <td>200A</td>
+              <td>200A</td>
+              <td>3801</td>
+              <td>2035</td>
+            </tr>
+            <tr>
+              <td>14</td>
+              <td>200B</td>
+              <td>2018</td>
+              <td>2026</td>
+              <td>2035</td>
+              <td>2042</td>
+              <td>200A</td>
+              <td>2059</td>
+              <td>2066</td>
+            </tr>
+            <tr>
+              <td>15</td>
+              <td>200C</td>
+              <td>2019</td>
+              <td>2027</td>
+              <td>2036</td>
+              <td>2043</td>
+              <td>204D</td>
+              <td>205A</td>
+              <td>201D</td>
+            </tr>
+            <tr>
+              <td>16</td>
+              <td>200D</td>
+              <td>201A</td>
+              <td>2028</td>
+              <td>2037</td>
+              <td>2044</td>
+              <td>202A</td>
+              <td>205B</td>
+              <td>2067</td>
+            </tr>
+            <tr>
+              <td>17</td>
+              <td>200E</td>
+              <td>201B</td>
+              <td>2029</td>
+              <td>2038</td>
+              <td>2036</td>
+              <td>204E</td>
+              <td>205C</td>
+              <td>2068</td>
+            </tr>
+            <tr>
+              <td>18</td>
+              <td>200F</td>
+              <td>201C</td>
+              <td>202A</td>
+              <td>2039</td>
+              <td>2045</td>
+              <td>204F</td>
+              <td>205D</td>
+              <td>2069</td>
+            </tr>
+            <tr>
+              <td>19</td>
+              <td>2010</td>
+              <td>201D</td>
+              <td>202B</td>
+              <td>203A</td>
+              <td>2046</td>
+              <td>2050</td>
+              <td>205E</td>
+              <td>206A</td>
+            </tr>
+            <tr>
+              <td>20</td>
+              <td>2010</td>
+              <td>201E</td>
+              <td>202C</td>
+              <td>203B</td>
+              <td>2047</td>
+              <td>2051</td>
+              <td>205F</td>
+              <td>2068</td>
+            </tr>
+            <tr>
+              <td>21</td>
+              <td>200A</td>
+              <td>200A</td>
+              <td>200A</td>
+              <td>200A</td>
+              <td>200A</td>
+              <td>200A</td>
+              <td>3801</td>
+              <td>2069</td>
+            </tr>
+            <tr>
+              <td>22</td>
+              <td>2809</td>
+              <td>2809</td>
+              <td>2809</td>
+              <td>2809</td>
+              <td>2809</td>
+              <td>2809</td>
+              <td>3800</td>
+              <td>2809</td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+              <th>Offset:</th>
+              <th>000B3060</th>
+              <th>000B308C</th>
+              <th>000B30B8</th>
+              <th>000B30E4</th>
+              <th>000B3110</th>
+              <th>000B313C</th>
+              <th>000B3168</th>
+              <th>000B3194</th>
+            </tr>
+            </tfoot>
+          </table>
+          <hr>
+    <table class="table table-bordered table-striped">
+            <thead>
+            <tr>
+              <th>2 of 4</th>
+              <th>Florida</th>
+              <th>Hartford</th>
+              <th>Los Angeles</th>
+              <th>Montreal</th>
+              <th>New Jersey</th>
+              <th>NY Islanders</th>
+              <th>NY Rangers</th>
+              <th>Ottawa</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>1</td>
+              <td>2000</td>
+              <td>2000</td>
+              <td>208B</td>
+              <td>2000</td>
+              <td>20AE</td>
+              <td>2000</td>
+              <td>2000</td>
+              <td>2000</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>2001</td>
+              <td>2079</td>
+              <td>208C</td>
+              <td>209E</td>
+              <td>20AF</td>
+              <td>20C4</td>
+              <td>20C4</td>
+              <td>2001</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>206B</td>
+              <td>207A</td>
+              <td>2013</td>
+              <td>209F</td>
+              <td>20B0</td>
+              <td>20C5</td>
+              <td>20C5</td>
+              <td>206D</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>206C</td>
+              <td>207B</td>
+              <td>208D</td>
+              <td>20A0</td>
+              <td>20B1</td>
+              <td>20C6</td>
+              <td>20C6</td>
+              <td>20D3</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>206D</td>
+              <td>207C</td>
+              <td>2023</td>
+              <td>20A1</td>
+              <td>20B2</td>
+              <td>20C7</td>
+              <td>20C7</td>
+              <td>20D4</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>206E</td>
+              <td>207D</td>
+              <td>2048</td>
+              <td>20A2</td>
+              <td>20B3</td>
+              <td>20C8</td>
+              <td>20C8</td>
+              <td>2023</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>206F</td>
+              <td>207E</td>
+              <td>208E</td>
+              <td>2055</td>
+              <td>20B4</td>
+              <td>20C9</td>
+              <td>20C9</td>
+              <td>20D5</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>2070</td>
+              <td>207F</td>
+              <td>208F</td>
+              <td>20A3</td>
+              <td>20B5</td>
+              <td>207F</td>
+              <td>207F</td>
+              <td>20D6</td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td>2071</td>
+              <td>2080</td>
+              <td>2090</td>
+              <td>20A4</td>
+              <td>20B6</td>
+              <td>20CA</td>
+              <td>20CA</td>
+              <td>2017</td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>2001</td>
+              <td>2081</td>
+              <td>2091</td>
+              <td>20A5</td>
+              <td>20B7</td>
+              <td>20CB</td>
+              <td>20CB</td>
+              <td>2001</td>
+            </tr>
+            <tr>
+              <td>11</td>
+              <td>2800</td>
+              <td>2800</td>
+              <td>2092</td>
+              <td>2800</td>
+              <td>20B8</td>
+              <td>2800</td>
+              <td>2800</td>
+              <td>2800</td>
+            </tr>
+            <tr>
+              <td>12</td>
+              <td>2009</td>
+              <td>2009</td>
+              <td>2093</td>
+              <td>2009</td>
+              <td>20B9</td>
+              <td>2009</td>
+              <td>2009</td>
+              <td>2009</td>
+            </tr>
+            <tr>
+              <td>13</td>
+              <td>200A</td>
+              <td>2082</td>
+              <td>2094</td>
+              <td>20A6</td>
+              <td>20BA</td>
+              <td>20CC</td>
+              <td>20CC</td>
+              <td>200A</td>
+            </tr>
+            <tr>
+              <td>14</td>
+              <td>2072</td>
+              <td>2083</td>
+              <td>2095</td>
+              <td>20A7</td>
+              <td>20BB</td>
+              <td>20CD</td>
+              <td>20CD</td>
+              <td>20D7</td>
+            </tr>
+            <tr>
+              <td>15</td>
+              <td>2073</td>
+              <td>2084</td>
+              <td>2096</td>
+              <td>20A8</td>
+              <td>20BC</td>
+              <td>20CE</td>
+              <td>20CE</td>
+              <td>20D8</td>
+            </tr>
+            <tr>
+              <td>16</td>
+              <td>2074</td>
+              <td>2085</td>
+              <td>2097</td>
+              <td>20A9</td>
+              <td>20BD</td>
+              <td>20CF</td>
+              <td>20CF</td>
+              <td>20CC</td>
+            </tr>
+            <tr>
+              <td>17</td>
+              <td>2075</td>
+              <td>2086</td>
+              <td>2098</td>
+              <td>2069</td>
+              <td>20BE</td>
+              <td>20D0</td>
+              <td>20D0</td>
+              <td>202A</td>
+            </tr>
+            <tr>
+              <td>18</td>
+              <td>2076</td>
+              <td>2087</td>
+              <td>2099</td>
+              <td>20AA</td>
+              <td>20BF</td>
+              <td>2087</td>
+              <td>2087</td>
+              <td>20D9</td>
+            </tr>
+            <tr>
+              <td>19</td>
+              <td>2077</td>
+              <td>2088</td>
+              <td>209A</td>
+              <td>20AB</td>
+              <td>20CO</td>
+              <td>2088</td>
+              <td>2088</td>
+              <td>20DA</td>
+            </tr>
+            <tr>
+              <td>20</td>
+              <td>2078</td>
+              <td>2089</td>
+              <td>209B</td>
+              <td>20AC</td>
+              <td>20C1</td>
+              <td>20D1</td>
+              <td>20D1</td>
+              <td>20DB</td>
+            </tr>
+            <tr>
+              <td>21</td>
+              <td>200A</td>
+              <td>208A</td>
+              <td>209C</td>
+              <td>20AD</td>
+              <td>20C2</td>
+              <td>20D2</td>
+              <td>20D2</td>
+              <td>200A</td>
+            </tr>
+            <tr>
+              <td>22</td>
+              <td>2809</td>
+              <td>2809</td>
+              <td>209D</td>
+              <td>2809</td>
+              <td>20C3</td>
+              <td>2809</td>
+              <td>2809</td>
+              <td>2809</td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+              <th>Offset:</th>
+              <th>000B31C0</th>
+              <th>000B31EC</th>
+              <th>000B3218</th>
+              <th>000B3244</th>
+              <th>000B3270</th>
+              <th>000B329C</th>
+              <th>000B32C8</th>
+              <th>000B32F4</th>
+            </tr>
+            </tfoot>
+          </table>
+          <hr>
+    <table class="table table-bordered table-striped">
+            <thead>
+            <tr>
+              <th>3 of 4</th>
+              <th>Pittsburgh</th>
+              <th>Philadelphia</th>
+              <th>Quebec</th>
+              <th>San Jose</th>
+              <th>St. Louis</th>
+              <th>Tampa Bay</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>1</td>
+              <td>20DC</td>
+              <td>208B</td>
+              <td>2000</td>
+              <td>2000</td>
+              <td>2000</td>
+              <td>2000</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>20DD</td>
+              <td>20F0</td>
+              <td>2001</td>
+              <td>2001</td>
+              <td>2001</td>
+              <td>2129</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>20DE</td>
+              <td>20F1</td>
+              <td>2101</td>
+              <td>210F</td>
+              <td>211B</td>
+              <td>2023</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>20DF</td>
+              <td>20D4</td>
+              <td>2102</td>
+              <td>2110</td>
+              <td>211C</td>
+              <td>212A</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>20E0</td>
+              <td>20F2</td>
+              <td>2103</td>
+              <td>2003</td>
+              <td>209E</td>
+              <td>212B</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>20E1</td>
+              <td>20F3</td>
+              <td>2104</td>
+              <td>2111</td>
+              <td>211D</td>
+              <td>212C</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>20E2</td>
+              <td>20F4</td>
+              <td>2105</td>
+              <td>2112</td>
+              <td>211E</td>
+              <td>2081</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>20E3</td>
+              <td>20F5</td>
+              <td>2106</td>
+              <td>2013</td>
+              <td>211F</td>
+              <td>212D</td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td>20E4</td>
+              <td>20F6</td>
+              <td>2107</td>
+              <td>2113</td>
+              <td>2120</td>
+              <td>2023</td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>20E5</td>
+              <td>20F7</td>
+              <td>2001</td>
+              <td>2114</td>
+              <td>2121</td>
+              <td>212E</td>
+            </tr>
+            <tr>
+              <td>11</td>
+              <td>20E6</td>
+              <td>2800</td>
+              <td>2800</td>
+              <td>2800</td>
+              <td>2800</td>
+              <td>2800</td>
+            </tr>
+            <tr>
+              <td>12</td>
+              <td>20E7</td>
+              <td>20F8</td>
+              <td>2009</td>
+              <td>2009</td>
+              <td>2009</td>
+              <td>2009</td>
+            </tr>
+            <tr>
+              <td>13</td>
+              <td>20E8</td>
+              <td>20F9</td>
+              <td>200A</td>
+              <td>200A</td>
+              <td>200A</td>
+              <td>20CC</td>
+            </tr>
+            <tr>
+              <td>14</td>
+              <td>20E9</td>
+              <td>20FA</td>
+              <td>2108</td>
+              <td>2115</td>
+              <td>2122</td>
+              <td>202A</td>
+            </tr>
+            <tr>
+              <td>15</td>
+              <td>20EA</td>
+              <td>20CC</td>
+              <td>2109</td>
+              <td>2116</td>
+              <td>2123</td>
+              <td>212F</td>
+            </tr>
+            <tr>
+              <td>16</td>
+              <td>20EB</td>
+              <td>20FB</td>
+              <td>210A</td>
+              <td>200C</td>
+              <td>2124</td>
+              <td>2130</td>
+            </tr>
+            <tr>
+              <td>17</td>
+              <td>20BE</td>
+              <td>20FC</td>
+              <td>210B</td>
+              <td>2117</td>
+              <td>2125</td>
+              <td>2131</td>
+            </tr>
+            <tr>
+              <td>18</td>
+              <td>2066</td>
+              <td>20FD</td>
+              <td>210C</td>
+              <td>2118</td>
+              <td>2126</td>
+              <td>2132</td>
+            </tr>
+            <tr>
+              <td>19</td>
+              <td>20EC</td>
+              <td>20FE</td>
+              <td>210D</td>
+              <td>201A</td>
+              <td>20FF</td>
+              <td>2133</td>
+            </tr>
+            <tr>
+              <td>20</td>
+              <td>20ED</td>
+              <td>20FF</td>
+              <td>210E</td>
+              <td>2119</td>
+              <td>2127</td>
+              <td>202A</td>
+            </tr>
+            <tr>
+              <td>21</td>
+              <td>20EE</td>
+              <td>2100</td>
+              <td>200A</td>
+              <td>211A</td>
+              <td>2128</td>
+              <td>2134</td>
+            </tr>
+            <tr>
+              <td>22</td>
+              <td>20EF</td>
+              <td>2809</td>
+              <td>2809</td>
+              <td>2809</td>
+              <td>2809</td>
+              <td>2809</td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+              <th>Offset:</th>
+              <th>000B3320</th>
+              <th>000B334C</th>
+              <th>000B3378</th>
+              <th>000B33A4</th>
+              <th>000B33D0</th>
+              <th>000B33FC</th>
+            </tr>
+            </tfoot>
+          </table>
+          <hr>
+    <table class="table table-bordered table-striped">
+            <thead>
+            <tr>
+              <th>4 of 4</th>
+              <th>Toronto</th>
+              <th>Vancouver</th>
+              <th>Washington</th>
+              <th>Winnipeg</th>
+              <th>Allstars E</th>
+              <th>Allstars W</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>1</td>
+              <td>2000</td>
+              <td>2000</td>
+              <td>2153</td>
+              <td>2000</td>
+              <td>216F</td>
+              <td>217F</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>2001</td>
+              <td>2140</td>
+              <td>20B1</td>
+              <td>2162</td>
+              <td>2170</td>
+              <td>202F</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>2129</td>
+              <td>2141</td>
+              <td>2154</td>
+              <td>20B1</td>
+              <td>2171</td>
+              <td>2180</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>2135</td>
+              <td>20A1</td>
+              <td>2155</td>
+              <td>2163</td>
+              <td>2172</td>
+              <td>2181</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>2032</td>
+              <td>2142</td>
+              <td>2156</td>
+              <td>2164</td>
+              <td>2173</td>
+              <td>2182</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>2136</td>
+              <td>2143</td>
+              <td>2157</td>
+              <td>2164</td>
+              <td>2174</td>
+              <td>2110</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>2003</td>
+              <td>2144</td>
+              <td>203F</td>
+              <td>2165</td>
+              <td>207B</td>
+              <td>206E</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>20D3</td>
+              <td>2145</td>
+              <td>2158</td>
+              <td>20A3</td>
+              <td>20B5</td>
+              <td>2183</td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td>2137</td>
+              <td>2146</td>
+              <td>2015</td>
+              <td>2166</td>
+              <td>2175</td>
+              <td>2184</td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>2111</td>
+              <td>2147</td>
+              <td>2016</td>
+              <td>2167</td>
+              <td>2176</td>
+              <td>20B1</td>
+            </tr>
+            <tr>
+              <td>11</td>
+              <td>2800</td>
+              <td>2148</td>
+              <td>2159</td>
+              <td>2800</td>
+              <td>2800</td>
+              <td>2185</td>
+            </tr>
+            <tr>
+              <td>12</td>
+              <td>3000</td>
+              <td>2009</td>
+              <td>215A</td>
+              <td>2009</td>
+              <td>20F8</td>
+              <td>2186</td>
+            </tr>
+            <tr>
+              <td>13</td>
+              <td>3801</td>
+              <td>2149</td>
+              <td>215B</td>
+              <td>2168</td>
+              <td>2177</td>
+              <td>2037</td>
+            </tr>
+            <tr>
+              <td>14</td>
+              <td>2138</td>
+              <td>214A</td>
+              <td>215C</td>
+              <td>215B</td>
+              <td>2178</td>
+              <td>2187</td>
+            </tr>
+            <tr>
+              <td>15</td>
+              <td>2139</td>
+              <td>214B</td>
+              <td>215D</td>
+              <td>2169</td>
+              <td>2179</td>
+              <td>2188</td>
+            </tr>
+            <tr>
+              <td>16</td>
+              <td>213A</td>
+              <td>214C</td>
+              <td>215E</td>
+              <td>216A</td>
+              <td>217A</td>
+              <td>2189</td>
+            </tr>
+            <tr>
+              <td>17</td>
+              <td>213B</td>
+              <td>214D</td>
+              <td>212F</td>
+              <td>216A</td>
+              <td>217B</td>
+              <td>200B</td>
+            </tr>
+            <tr>
+              <td>18</td>
+              <td>213C</td>
+              <td>214E</td>
+              <td>215F</td>
+              <td>216B</td>
+              <td>2084</td>
+              <td>218A</td>
+            </tr>
+            <tr>
+              <td>19</td>
+              <td>213D</td>
+              <td>214F</td>
+              <td>2160</td>
+              <td>216C</td>
+              <td>20C0</td>
+              <td>218B</td>
+            </tr>
+            <tr>
+              <td>20</td>
+              <td>213E</td>
+              <td>2150</td>
+              <td>201C</td>
+              <td>216D</td>
+              <td>217C</td>
+              <td>218C</td>
+            </tr>
+            <tr>
+              <td>21</td>
+              <td>213F</td>
+              <td>2151</td>
+              <td>201D</td>
+              <td>216E</td>
+              <td>217D</td>
+              <td>20BC</td>
+            </tr>
+            <tr>
+              <td>22</td>
+              <td>3800</td>
+              <td>2152</td>
+              <td>2161</td>
+              <td>2809</td>
+              <td>217E</td>
+              <td>218D</td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+              <th>Offset:</th>
+              <th>000B3428</th>
+              <th>000B3454</th>
+              <th>000B3480</th>
+              <th>000B34AC</th>
+              <th>000B34D8</th>
+              <th>000B3504</th>
+            </tr>
+            </tfoot>
+          </table>
+          <p>The values above are the assigned tiles by default for each team in the .bin file. Below is the Tile Layer Pro representation of the above which starts at offset 000AFE1C. I put &quot;2000&quot; and &quot;2001&quot; on the image so you can see where the tiles begin. Those are Anaheim's first 2 startup banner tiles. Most teams share tiles with other teams to save space in the bin.</p>
+    <p><img src="/images/editing/startup_banners/startup_banners04_bin.gif" title="Startup Banners"></p>
+          <p>I will eventually have an example of how I modified the Startup Banners.</p>
+    <p align="center"><a href="/html/editing/edit_bin.php">Back to Top</a></p>
+<hr>
+</div>
+
+
+<span class="anchor" id="edit_bin_team_ratings"></span>
+<div style="background-image:url(/images/editing/fade.gif)">
+<h3><img class="puck"> How to edit team overall ratings</h3>
+    <p>by <a href="mailto:admin@nhl94.com">Evan</a></p>
+          <p>This is how you can change the team overall ratings. This doesn't seem to affect the team's gameplay, but you may want to make these numbers more accurate for your teams. </p>
+          <p class="alert-info">Bin File Offset: 000FE18E</p>
+          <p><img src="/images/editing/team_ratings.gif" title="Screenshot 1"></p>
+    <table class="table table-bordered table-striped">
+            <tbody>
+            <tr>
+              <td><img src="/images/editing/color_yellow.gif"></td>
+              <td>33 - Anaheim - Rating in game: 51</td>
+              <td><img src="/images/editing/color_blue.gif"></td>
+              <td>4A - NY Rangers - Rating in game: 74</td>
+            </tr>
+            <tr>
+              <td><img src="/images/editing/color_peach.gif"></td>
+              <td>4C - Boston - Rating in game: 76</td>
+              <td><img src="/images/editing/color_magenta.gif"></td>
+              <td>37 - Ottawa - Rating in game: 55</td>
+            </tr>
+            <tr>
+              <td><img src="/images/editing/color_green.gif"></td>
+              <td>49 - Buffalo - Rating in game: 73</td>
+              <td><img src="/images/editing/color_pink.gif"></td>
+              <td>45 - Philadelphia - Rating in game: 69</td>
+            </tr>
+            <tr>
+              <td><img src="/images/editing/color_orange.gif"></td>
+              <td>4B - Calgary - Rating in game: 75</td>
+              <td><img src="/images/editing/colors_grey.gif"></td>
+              <td>4B - Pittsburgh - Rating in game: 75</td>
+            </tr>
+            <tr>
+              <td><img src="/images/editing/color_blue.gif"></td>
+              <td>4E - Chicago - Rating in game: 78</td>
+              <td><img src="/images/editing/color_aqua.gif"></td>
+              <td>47 - Quebec - Rating in game: 71</td>
+            </tr>
+            <tr>
+              <td><img src="/images/editing/color_magenta.gif"></td>
+              <td>43 - Dallas - Rating in game: 67</td>
+              <td><img src="/images/editing/color_grassgreen.gif"></td>
+              <td>38 - San Jose - Rating in game: 56</td>
+            </tr>
+            <tr>
+              <td><img src="/images/editing/color_pink.gif"></td>
+              <td>4B - Detroit - Rating in game: 75</td>
+              <td><img src="/images/editing/color_yellow.gif"></td>
+              <td>45 - St. Louis - Rating in game: 69</td>
+            </tr>
+            <tr>
+              <td><img src="/images/editing/colors_grey.gif"></td>
+              <td>43 - Edmonton - Rating in game: 67</td>
+              <td><img src="/images/editing/color_peach.gif"></td>
+              <td>38 - Tampa Bay - Rating in game: 56</td>
+            </tr>
+            <tr>
+              <td><img src="/images/editing/color_aqua.gif"></td>
+              <td>34 - Florida - Rating in game: 54</td>
+              <td><img src="/images/editing/color_green.gif"></td>
+              <td>48 - Toronto - Rating in game: 72</td>
+            </tr>
+            <tr>
+              <td><img src="/images/editing/color_grassgreen.gif"></td>
+              <td>42 - Hartford - Rating in game: 66</td>
+              <td><img src="/images/editing/color_orange.gif"></td>
+              <td>47 - Vancouver - Rating in game: 71</td>
+            </tr>
+            <tr>
+              <td><img src="/images/editing/color_yellow.gif"></td>
+              <td>4A - Los Angeles - Rating in game: 74</td>
+              <td><img src="/images/editing/color_blue.gif"></td>
+              <td>48 - Winnipeg - Rating in game: 72</td>
+            </tr>
+            <tr>
+              <td><img src="/images/editing/color_peach.gif"></td>
+              <td>49 - Montreal - Rating in game: 73</td>
+              <td><img src="/images/editing/color_magenta.gif"></td>
+              <td>46 - Washington - Rating in game: 70</td>
+            </tr>
+            <tr>
+              <td><img src="/images/editing/color_green.gif"></td>
+              <td>44 - New Jersey - Rating in game: 68</td>
+              <td><img src="/images/editing/color_pink.gif"></td>
+              <td>5B - Allstars East - Rating in game: 91</td>
+            </tr>
+            <tr>
+              <td><img src="/images/editing/color_orange.gif"></td>
+              <td>42 - NY Islanders - Rating in game: 66</td>
+              <td><img src="/images/editing/colors_grey.gif"></td>
+              <td>59 - Allstars West - Rating in game: 89</td>
+            </tr>
+            </tbody>
+          </table>
+    <p align="center"><a href="/html/editing/edit_bin.php">Back to Top</a></p>
+<hr>
+</div>
+
+
+<span class="anchor" id="edit_bin_isles_rangers_names"></span>
+<div style="background-image:url(/images/editing/fade.gif)">
+<h3><img class="puck"> How to edit the Islanders and Rangers team names at the startup screen</h3>
+    <p>by <a href="mailto:admin@nhl94.com">Evan</a></p>
+          <p>In the NHL94 .bin file, there are 2 areas where the New York Islanders and the New York Rangers are listed. For some reason, they don't use the typical area around the rosters for the startup screen name like the rest of the teams. The screenshot below shows where in the hex their names in the startup screen come from.</p>
+          <p>Thanks to Wboy's research, here's how to make the .bin file use the same set of names for the Islanders and Rangers as the rest of the teams.</p>
+    <p class="alert-info">Bin File Offset: 000F7CB4</p>
+    <p> <img src="/images/editing/isles_rangers_team_names.gif" title="Islanders &amp; Rangers team names"></p>
+          <ul>
+          <li><img src="/images/editing/color_yellow.gif"> The New York Islanders team name for startup screen</li>
+          <li><img src="/images/editing/color_peach.gif"> The New York Rangers team name for startup screen</li>
+          </ul>
+          <p>To change the Islanders to use the roster team name, simply replace the first set of digits below (000F 7CC6) to 0000 2D2E. This tells the .bin file to refer to this offset (like the rest of the teams). To do the same for the Rangers, simply replace the second set of digits below (000F 7CB2) to 0000 3022. Again, this tells the .bin file to use the roster team name as the startup screen name.</p>
+    <p><img src="/images/editing/isles_rangers_team_names2.gif" title="Islanders &amp; Rangers team names"></p>
+          <ul>
+          <li><img src="/images/editing/color_green.gif"> The New York Islanders team name reference code</li>
+          <li><img src="/images/editing/color_orange.gif"> The New York Rangers team name reference code</li>
+          </ul>
+          <p>It's probably a good idea to apply this edit to any .bin file that you'll be editing so if you ever change the team names, you won't have to worry about the Islanders and Rangers team names not changing.</p>
+          <p align="center"><a href="/html/editing/edit_bin.php">Back to Top</a></p>
+<hr>
+</div>
+
+
+<span class="anchor" id="edit_bin_startup_screen_defaults"></span>
+<div style="background-image:url(/images/editing/fade.gif)">
+<h3><img class="puck"> How to edit the defaults on the startup screen menu</h3>
+    <p>by <a href="mailto:admin@nhl94.com">Evan</a></p>
+          <p>Thanks to Wboy's research, we know how to edit the defaults on the startup screen menu. Below are the values for each menu item, and what each one changes.</p>
+    <p class="alert-info">Bin File Offset: 00017C8E</p>
+    <p><img src="/images/editing/startup_menu_defaults.gif" title="Startup Screen Defaults"></p>
+          <ul>
+          <li><img src="/images/editing/color_yellow.gif"> Play Mode - 0000 for Regular Season, 0001 for New Playoffs, 0002 for New Playoffs/7 Game, and 0003 for Shootout</li>
+          <li><img src="/images/editing/color_peach.gif"> Players - 0000 for Demo, 0001 for One - Home, 0002 for One - Visitor, 0003 for Two - Teammates, and 0004 for Two - Head to Head</li>
+          <li><img src="/images/editing/color_green.gif"> Team 1 - 0000 for Anaheim through 001B for Allstars West</li>
+          <li><img src="/images/editing/color_orange.gif"> Team 2 - 0000 for Anaheim through 001B for Allstars West</li>
+          <li><img src="/images/editing/color_blue.gif"> Period Length - 0000 for 5 Minutes, 0001 for 10 Minutes, and 0002 for 20 Minutes</li>
+          <li><img src="/images/editing/color_magenta.gif"> Goalies - 0000 for Manual Control, and 0001 for Auto Control</li>
+          <li><img src="/images/editing/color_pink.gif"> User Records - 0000 for On, and 0001 for Off</li>
+          <li><img src="/images/editing/colors_grey.gif"> Penalties - 0000 for Off, 0001 for On, and 0002 for On, except off-sides</li>
+          <li><img src="/images/editing/color_aqua.gif"> Line Changes - 0000 for On, 0001 for Off, and 0002 for Auto</li>
+          </ul>
+          <p>Of course, these values will change according to hacks. If you're 3 period lengths are 30 seconds, 5 minutes, and 7 minutes, then the 0001 would equal 5 minute periods.</p>
+          <p align="center"><a href="/html/editing/edit_bin.php">Back to Top</a></p>
+<hr>
+</div>
+
+
+<span class="anchor" id="edit_bin_icelogos"></span>
+<div style="background-image:url(/images/editing/fade.gif)">
+<h3><img class="puck"> How to edit center ice logos</h3>
+    <p>by <a href="mailto:admin@nhl94.com">Evan</a></p>
+          <p>I figure the best way to explain this is to actually edit a team's logo with this tutorial. Before continuing, please make sure you have the programs Tile Layer Pro, the Gens emulator, and the Bin file open and ready to use in Tile Layer Pro. Having Hex Workshop is a plus too!</p>
+          <p>Lets start by opening up the nhl94.bin file found through this website or one you have. You can switch the format to Genesis under View-&gt;Format-&gt;Genesis. You can also zoom in on the Bin file by clicking the zoom button at the top if you like.</p>
+          <p>Scroll down the file using the page down key to get to the offset around 000EDA88 (92%). The offset can be read from the status bar at the bottom of the program. You should also see the format, and the size of the file there as well.</p>
+          <p>You can leave the Palette Editor on the colors it's currently showing. The logos will seem to have wrong colors, but this really doesn't matter once you start the game up in the emulator. The logo colors will be fine in the game.</p>
+          <p>At this point, you should be seeing the ice logos, but they probably look all broken up. By using the plus and minus keys on the keyboard, you can shift the rows of tiles until a logo lines up correctly in their respective rows (I chose Calgary's logo to lineup).</p>
+          <p>Ice logos are 6 tiles across and 4 tiles down, giving each ice logo a total of 24 tiles. Each tile is 8x8 pixels. This means that each ice logo is 48x32 total pixels.</p>
+          <p>Let's focus on Calgary's logo. That is the 3rd logo down from the beginning of them. Line it up so it looks something like this by using the arrow keys, and the plus and minus keys:</p>
+          <p><img src="/images/editing/tutorial_icelogo/icelogo01_bin.gif" title="Ice Logo 1"></p>
+          <p>Once you have it to this point, here's how you edit Calgary's logo. Left-click the first Calgary tile and then right-click it on the Tile Arranger as shown below:</p>
+          <p><img src="/images/editing/tutorial_icelogo/icelogo02_bin.gif" title="Ice Logo 2"></p>
+          <p>Continue to do this process, putting the tiles in the Tile Arranger as you would to view the logo correctly and eventually you should end up with the following image:</p>
+          <p><img src="/images/editing/tutorial_icelogo/icelogo03_bin.gif" title="Ice Logo 3"></p>
+          <p>Now you know what the Calgary logo looks like together in Tile Layer Pro. That is the entire ice logo for Calgary, being a total of 48x32 pixels.</p>
+          <p>From this point, you can create what I call a &quot;palette test&quot;. Left-click the first Calgary tile in the Tile Arranger and then Left-click the first color in the Palette Editor (it is usually black). Now &quot;draw&quot; the black into every pixel of the first tile by Left-clicking within the first tile in the Tile Editor. Now Left-click the 2nd tile in the Tile Arranger, left-click the 2nd color in the Palette Editor, and &quot;draw&quot; the green into the 2nd tile in the Tile Editor. Continue this process until you have something like the screenshot below:</p>
+          <p><img src="/images/editing/tutorial_icelogo/icelogo04_bin.gif" title="Ice Logo 4"></p>
+          <p>Now save the Bin file as something new, so you can see what this test looks like in the game. Start up the Gens emulator and load up the file you just saved. Select Calgary as the home team. The reason for doing this is to learn which colors become which in the actual game. You will see that the first black = transparent/ice color, the 2nd black = light grey, etc.</p>
+          <p><img src="/images/editing/tutorial_icelogo/icelogo05.gif" title="Ice Logo 5"></p>
+          <p>Write down or type somewhere what each color represents in the Palette Editor. This is an example of what I usually write down: (Remember, the left column is the colors from Tile Layer Pro, and the right column is the actual colors in the game.)</p>
+    <table class="table table-bordered table-striped">
+            <thead>
+            <tr>
+              <th>Palette Color<br>
+                (RGB color in Tile Layer Pro)</th>
+              <th>Ice Color (for Calgary in this example taken straight from the palette test above)</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>Black 1 (0,0,0)</td>
+              <td>Transparent/equal to ice color (0EE8) - same for every team</td>
+            </tr>
+            <tr>
+              <td>Green 1 (99,207,99)</td>
+              <td>Dark Grey (0222)</td>
+            </tr>
+            <tr>
+              <td>Blue 1 (57,51,255)</td>
+              <td>Black (0000)</td>
+            </tr>
+            <tr>
+              <td>Off White (220,255,255)</td>
+              <td>Maroon (0006)</td>
+            </tr>
+            <tr>
+              <td>Blue 2 (51,0,134)</td>
+              <td>Dark Red (0008)</td>
+            </tr>
+            <tr>
+              <td>Tan (191,115,0)</td>
+              <td>Red (000A)</td>
+            </tr>
+            <tr>
+              <td>Blue 3 (0,207,255)</td>
+              <td>Pink (088C) - same for every team</td>
+            </tr>
+            <tr>
+              <td>Cream (239,235,180)</td>
+              <td>Darker Pink (066A) - same for every team</td>
+            </tr>
+            <tr>
+              <td>Maroon (147,0,0)</td>
+              <td>Darker Orange (008C)</td>
+            </tr>
+            <tr>
+              <td>Green 2 (81,255,0)</td>
+              <td>Orange (00AE)</td>
+            </tr>
+            <tr>
+              <td>Orange (255,172,0)</td>
+              <td>Red (000A)</td>
+            </tr>
+            <tr>
+              <td>Purple 1 (188,17,164)</td>
+              <td>Grey (0CCC)</td>
+            </tr>
+            <tr>
+              <td>Black 2 (0,0,0)</td>
+              <td>Light Grey (0EEE)</td>
+            </tr>
+            <tr>
+              <td>Blue 4 (89,140,242)</td>
+              <td>Darker Grey (0AAA)</td>
+            </tr>
+            <tr>
+              <td>Purple 2 (182,0,159)</td>
+              <td>Darker Orange (048C) - same for every team</td>
+            </tr>
+            <tr>
+              <td>Green 3 (131,220,0)</td>
+              <td>Turquoise (0A84) - same for every team</td>
+            </tr>
+            </tbody>
+          </table>
+          <p>These colors come from the team uniform colors. You will notice patterns with each team's colors, like every team will have a black, a white, pinks, etc. Every team will have pinks for the skin color, every team will have black for the gloves and skates color, etc. If you change a team's uniform colors, the ice logo will use those colors depending on which ones you changed.</p>
+          <p>You can find these hex values for each color if you goto the team's uniform colors area in the hex editor. Compare this chart with the editing section on uniform colors (I used Calgary for both), and it should help you understand how it works. You could do a palette test for each team, take a screenshot of it, and keep it for reference if that helps.</p>
+          <p>Now, lets open up the original Bin file and change Calgary's ice logo from having a red &quot;C&quot; to having a black &quot;C&quot;. We can look at our chart above to see that &quot;blue 1&quot; will give us black. All we have to do is open the Bin in Tile Layer Pro, and replace the &quot;tan&quot; with the &quot;blue 1&quot; Palette Editor color as shown below:</p>
+          <p><img src="/images/editing/tutorial_icelogo/icelogo06_bin.gif" title="Ice Logo 6"></p>
+          <p>Now let's save this file as something new, like cal-black.bin, and open the Bin up in Gens. Choose Calgary as the home team, and this is what the ice logo should now look like:</p>
+          <p><img src="/images/editing/tutorial_icelogo/icelogo07.gif" title="Ice Logo 7"></p>
+          <p>So now you should be able to edit ice logos using Tile Layer Pro by drawing on tiles.</p>
+          <p>There is also an import BMP function in the program. I have used this, but didn't get the results I was looking for. Basically, what you would do is create an image in a program like Photoshop, Paint, etc., and make the image size 48x32. Then, break up your image into 4 rows, each being 48x8 pixels in size. This equals 1 row of tiles in Tile Layer Pro. Then you import each row image into Tile Layer Pro (one at a time), and move it to the corresponding spot in the Bin by dragging it with the mouse. When you're happy with it's location, you click off the image and it will inherit that location.</p>
+          <p align="center"><a href="/html/editing/edit_bin.php">Back to Top</a></p>
+<hr>
+</div>
+
+
+<span class="anchor" id="edit_bin_puck"></span>
+<div style="background-image:url(/images/editing/fade.gif)">
+<h3><img class="puck"> How to edit the puck</h3>
+    <p>by <a href="mailto:admin@nhl94.com">Evan</a></p>
+          <p>I have not seen how other hackers make the puck, but I just quickly made one that looks pretty good using Tile Layer Pro. Below are the screenshots that should help you find the puck (offsett is around 0007B000, 48% in the .bin file). The first screenshot is the default puck graphics, and the second screenshot is the graphics I changed. You will need to change all of the 8 puck tiles for the transitions of the puck moving around in the game to look good. You can play around with the shadow tile as well.</p>
+          <p><img src="/images/editing/puck.gif" title="Default Puck Tiles"></p>
+          <p><img src="/images/editing/puck_edited.gif" title="Edited Puck Tiles"></p>
+          <p>Play around with the graphics until you're happy with how the puck looks on the ice. If anyone has nice screenshots of their pucks in Tile Layer Pro, let me know so I can add that to this website. Thanks!</p>
+          <p align="center"><a href="/html/editing/edit_bin.php">Back to Top</a></p>
+<hr>
+</div>
+
+
+<span class="anchor" id="edit_bin_playerstar"></span>
+<div style="background-image:url(/images/editing/fade.gif)">
+<h3><img class="puck"> How to edit the player star</h3>
+    <p>by <a href="mailto:admin@nhl94.com">Evan</a></p>
+          <p>Below is a screenshot showing where the player stars are in Tile Layer Pro. The first 4 tiles are player 1's star, the next 4 tiles are player 2's star, and the next 4 tiles are the highlight state for when someone has the puck. I have put these in the arranger below to show that this graphic is half of the star, and then mirrored to complete the star in the game. You don't have to worry about the mirroring part, that happens automatically.</p>
+    <p class="alert-info">Bin File Offset: 0007C144</p>
+    <p><img src="/images/editing/player_star/player_star01.gif" title="Player Star 1"></p>
+          <p>Once you put those tiles in the arranger as shown above, you can easily edit them to be anything else. Below is a screenshot of what I changed the stars to (in this case, to circles). At the bottom of this page are screenshots of the circle in the game.</p>
+    <p><img src="/images/editing/player_star/player_star02.gif" title="Player Star 2"></p>
+          <p align="left">Screenshots of the circle instead of player's star.</p>
+    <p><img src="/images/editing/player_star/player_star05.gif" title="Player Star 5"><img src="/images/editing/player_star/player_star03.gif" title="Player Star 3"></p>
+          <p align="center"><a href="/html/editing/edit_bin.php">Back to Top</a></p>
+<hr>
+</div>
+
+
+<span class="anchor" id="edit_bin_play_on_genesis"></span>
+<div style="background-image:url(/images/editing/fade.gif)">
+<h3><img class="puck"> How to play an edited BIN file on a Genesis console</h3>
+    <p>by <a href="mailto:admin@nhl94.com">Evan</a></p>
+          <p>It is possible to edit the Bin file, and play it on the actual Genesis console. What this requires is that you puchase a piece of hardware and cables that connect to your computer from <a href="http://www.tototek.com/" target="_blank" class="link3">Tototek</a>. This hardware comes with a formatted Genesis cartridge that you connect onto the hardware. This hardware is known as the MD-Pro 32 or MD-Pro 64. You can purchase a 32 meg card or a 64 meg card.</p>
+          <p>Once you receive the MD-Pro card, you will probably have to mess around with it until you get it working. For one, it requires that you set your bios parallel port to EPP. It also requires that you attach a parallel and usb cable to your computer at the same time. These should also be purchased from Tototek to ensure compatibility.</p>
+          <p>They provide free software for the MD-Pro cards off of their website called Dreamwriter. The latest version of the software may NOT be the best for your computer. If the latest version doesn't work, try older versions. Personally, I am using an MD-Pro 32 card with Dreamwriter version 1.6 on an old laptop.</p>
+          <p>This is a screenshot of  Dreamwriter v.2.1:</p>
+    <p><img src="/images/editing/dreamwriter.gif" alt="Dreamwriter"></p>
+          <p>The hardware and software are pretty simple to learn and use. For more infomation, visit their <a href="http://www.tototek.com/" target="_blank">website</a> and their forums.</p>
+          <p align="center"><a href="/html/editing/edit_bin.php">Back to Top</a></p>
+<hr>
+</div>
+
+<!-- End body content -->
+</div>
+
+<!-- Display footer on page -->
+<div id="sitefooter"></div>
+
+</body>
+</html>
